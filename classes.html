@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0A0A0A" />
+  <title>Classes — West End Athletic Club</title>
+  <meta name="description" content="Six training disciplines under one roof. Fitness Boxing, Technical Boxing, Strength &amp; Conditioning, Muay Thai, MMA, Tech Sparring — plus youth programs and the 12-week transformation challenge." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Big+Shoulders+Display:wght@700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <div class="loader" id="loader" role="status" aria-label="Loading">
+    <div class="loader__bar">
+      <span class="meta meta--prefix">EST. 2015</span>
+      <span class="meta meta--prefix">TORONTO / CANADA</span>
+    </div>
+    <div class="loader__center">
+      <div class="loader__counter"><span id="counter">00</span><sup>%</sup></div>
+    </div>
+    <div class="loader__bar">
+      <span class="meta meta--prefix">WEC / VOL.IX</span>
+      <span class="meta meta--prefix">CLASSES</span>
+    </div>
+    <div class="loader__brand">Not Your Average Toronto Boxing Gym</div>
+    <div class="loader__progress"><div class="loader__progress-fill"></div></div>
+  </div>
+
+  <header class="nav" id="nav">
+    <a href="index.html" class="nav__logo" aria-label="West End Athletic Club">
+      <div class="nav__logo-mark">W</div>
+      <div class="nav__logo-text">WEST END<span>Athletic Club · TO</span></div>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="about.html" class="nav__link">The Club</a>
+      <a href="classes.html" class="nav__link">Classes</a>
+      <a href="schedule.html" class="nav__link">Schedule</a>
+      <a href="memberships.html" class="nav__link">Memberships</a>
+      <a href="index.html#visit" class="nav__link">Visit</a>
+    </nav>
+    <div style="display:flex; align-items:center;">
+      <a href="promo.html" class="nav__cta">
+        3 Days Free
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <button class="nav__burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="about.html" class="mobile-menu__link">The Club</a>
+    <a href="classes.html" class="mobile-menu__link"><em style="font-family:'Playfair Display';font-style:italic;color:#E63946;">Classes</em></a>
+    <a href="schedule.html" class="mobile-menu__link">Schedule</a>
+    <a href="memberships.html" class="mobile-menu__link">Memberships</a>
+    <a href="promo.html" class="mobile-menu__link">3 Days Free</a>
+    <a href="index.html#visit" class="mobile-menu__link">Visit</a>
+  </div>
+
+  <main id="top">
+
+    <section class="page-hero" aria-labelledby="classes-heading">
+      <div class="page-hero__media">
+        <img src="images/f1.jpg" alt="The heavy bag row" />
+      </div>
+      <div class="page-hero__breadcrumbs">
+        <a href="index.html">Home</a><span>·</span><a href="classes.html">Classes</a>
+      </div>
+      <div class="page-hero__container">
+        <div class="page-hero__meta">
+          <span class="meta meta--prefix">Classes · Vol. IX</span>
+          <span class="meta">Six disciplines · One roof</span>
+        </div>
+        <h1 class="page-hero__title" id="classes-heading" data-split>Train <em>any</em> way you want.</h1>
+        <p class="page-hero__sub">Group classes, private coaching, sparring, strength &amp; conditioning, and a structured 12-week transformation program. Whether you've thrown a thousand punches or never laced a glove — there's a class with your name on it.</p>
+      </div>
+    </section>
+
+    <!-- FIRST-TIME PRIMER — answers the most common newcomer questions -->
+    <section class="primer" aria-labelledby="primer-heading">
+      <div class="primer__inner">
+        <div class="primer__head">
+          <span class="meta meta--prefix">First Time? Read This</span>
+          <h2 class="primer__title" id="primer-heading">Never <em>boxed</em> before? Start here.</h2>
+        </div>
+        <ol class="primer__steps">
+          <li>
+            <span class="primer__num">01</span>
+            <h3 class="primer__step-title">Book any <em>group class</em></h3>
+            <p>Show up 15 min early. Wraps are loaned, gloves are loaned. Wear whatever you'd wear to run.</p>
+          </li>
+          <li>
+            <span class="primer__num">02</span>
+            <h3 class="primer__step-title">A coach walks you <em>through</em> it</h3>
+            <p>Stance, jab, footwork — the basics in the first ten minutes. No one expects you to know anything.</p>
+          </li>
+          <li>
+            <span class="primer__num">03</span>
+            <h3 class="primer__step-title">Use your <em>three free days</em></h3>
+            <p>Three consecutive days, every class on the schedule, the bag room, open gym — all in. Decide afterward.</p>
+          </li>
+        </ol>
+        <a href="promo.html" class="btn-primary" style="margin-top:8px;">
+          Claim 3 Days Free
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- DISCIPLINES -->
+    <section class="container" style="padding:0 clamp(20px,5vw,48px);">
+
+      <article class="discipline" id="fitness-boxing">
+        <div class="discipline__grid">
+          <div class="discipline__media">
+            <div class="discipline__num">01 / FB</div>
+            <img src="images/group-classes.png" alt="Fitness Boxing class at West End" />
+          </div>
+          <div class="discipline__content">
+            <div class="meta meta--prefix">Group Class · All Levels</div>
+            <h2 class="discipline__title">Fitness <em>Boxing.</em></h2>
+            <p class="discipline__desc">Fundamentals of boxing combined with high-intensity intervals. Cardio meets strength, structured around 50-minute group rounds. Non-contact, scalable to every fitness level — bring your first day or your hundredth.</p>
+            <div class="discipline__facts">
+              <div class="discipline__fact">
+                <div class="discipline__fact-label">Format</div>
+                <div class="discipline__fact-val">50 min · Group</div>
+              </div>
+              <div class="discipline__fact">
+                <div class="discipline__fact-label">Contact</div>
+                <div class="discipline__fact-val">Non-contact</div>
+              </div>
+              <div class="discipline__fact">
+                <div class="discipline__fact-label">Intensity</div>
+                <div class="discipline__fact-val">High</div>
+              </div>
+              <div class="discipline__fact">
+                <div class="discipline__fact-label">Coaches</div>
+                <div class="discipline__fact-val">Vinny · Misha · Jim</div>
+              </div>
+            </div>
+            <a href="schedule.html" class="btn-secondary" style="align-self:flex-start;">See Times <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:14px;height:14px;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="discipline" id="technical-boxing">
+        <div class="discipline__grid">
+          <div class="discipline__media">
+            <div class="discipline__num">02 / TB</div>
+            <img src="images/training-1.jpeg" alt="Technical Boxing instruction" />
+          </div>
+          <div class="discipline__content">
+            <div class="meta meta--prefix">Group Class · Intermediate+</div>
+            <h2 class="discipline__title">Technical <em>Boxing.</em></h2>
+            <p class="discipline__desc">Structured learning sessions with monthly themes — footwork, defence, combinations, distance control. Real improvement that compounds, not just fatigue you can post about. Coached by Stevie Baily and Misha Ideltchik.</p>
+            <div class="discipline__facts">
+              <div class="discipline__fact">
+                <div class="discipline__fact-label">Format</div>
+                <div class="discipline__fact-val">60 min · Group</div>
+              </div>
+              <div class="discipline__fact">
+                <div class="discipline__fact-label">Contact</div>
+                <div class="discipline__fact-val">Partner drills</div>
+              </div>
+              <div class="discipline__fact">
+                <div class="discipline__fact-label">Intensity</div>
+                <div class="discipline__fact-val">Medium-High</div>
+              </div>
+              <div class="discipline__fact">
+                <div class="discipline__fact-label">Coaches</div>
+                <div class="discipline__fact-val">Stevie · Misha</div>
+              </div>
+            </div>
+            <a href="schedule.html" class="btn-secondary" style="align-self:flex-start;">See Times <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:14px;height:14px;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="discipline" id="strength-conditioning">
+        <div class="discipline__grid">
+          <div class="discipline__media">
+            <div class="discipline__num">03 / SC</div>
+            <img src="images/f17.jpg" alt="Strength and conditioning floor" />
+          </div>
+          <div class="discipline__content">
+            <div class="meta meta--prefix">Group Class · All Levels</div>
+            <h2 class="discipline__title">Strength &amp; <em>Conditioning.</em></h2>
+            <p class="discipline__desc">50-minute circuits on the Eleiko floor — resistance, plyometrics, ballistics, conditioning gear. Built for working athletes who want a coached program, not a guess-the-workout app. Periodized monthly by Miguel Valdez.</p>
+            <div class="discipline__facts">
+              <div class="discipline__fact">
+                <div class="discipline__fact-label">Format</div>
+                <div class="discipline__fact-val">50 min · Group</div>
+              </div>
+              <div class="discipline__fact">
+                <div class="discipline__fact-label">Equipment</div>
+                <div class="discipline__fact-val">Eleiko floor</div>
+              </div>
+              <div class="discipline__fact">
+                <div class="discipline__fact-label">Intensity</div>
+                <div class="discipline__fact-val">High</div>
+              </div>
+              <div class="discipline__fact">
+                <div class="discipline__fact-label">Coach</div>
+                <div class="discipline__fact-val">Miguel Valdez</div>
+              </div>
+            </div>
+            <a href="schedule.html" class="btn-secondary" style="align-self:flex-start;">See Times <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:14px;height:14px;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="discipline" id="muay-thai">
+        <div class="discipline__grid">
+          <div class="discipline__media">
+            <div class="discipline__num">04 / MT</div>
+            <img src="images/f6.jpg" alt="Muay Thai training" />
+          </div>
+          <div class="discipline__content">
+            <div class="meta meta--prefix">Group Class · All Levels</div>
+            <h2 class="discipline__title">Muay <em>Thai.</em></h2>
+            <p class="discipline__desc">The art of eight limbs — punches, kicks, knees and elbows. Partner drills on Thai pads, low-kick shields and heavy bags, plus sport-specific S&amp;C. Striking that translates to ring, cage, or just sharper coordination.</p>
+            <div class="discipline__facts">
+              <div class="discipline__fact">
+                <div class="discipline__fact-label">Format</div>
+                <div class="discipline__fact-val">60 min · Group</div>
+              </div>
+              <div class="discipline__fact">
+                <div class="discipline__fact-label">Contact</div>
+                <div class="discipline__fact-val">Pads &amp; bags</div>
+              </div>
+              <div class="discipline__fact">
+                <div class="discipline__fact-label">Intensity</div>
+                <div class="discipline__fact-val">High</div>
+              </div>
+              <div class="discipline__fact">
+                <div class="discipline__fact-label">Coach</div>
+                <div class="discipline__fact-val">Rob Roe</div>
+              </div>
+            </div>
+            <a href="schedule.html" class="btn-secondary" style="align-self:flex-start;">See Times <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:14px;height:14px;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="discipline" id="mma">
+        <div class="discipline__grid">
+          <div class="discipline__media">
+            <div class="discipline__num">05 / MMA</div>
+            <img src="images/training-2.jpg" alt="MMA training" />
+          </div>
+          <div class="discipline__content">
+            <div class="meta meta--prefix">Group Class · All Levels</div>
+            <h2 class="discipline__title">Mixed <em>Martial</em> Arts.</h2>
+            <p class="discipline__desc">Striking, kicking, wrestling and grappling — a well-rounded combat discipline with full-body conditioning. Layered fundamentals across stand-up and ground game, drilled in a structured class environment.</p>
+            <div class="discipline__facts">
+              <div class="discipline__fact">
+                <div class="discipline__fact-label">Format</div>
+                <div class="discipline__fact-val">75 min · Group</div>
+              </div>
+              <div class="discipline__fact">
+                <div class="discipline__fact-label">Contact</div>
+                <div class="discipline__fact-val">Drill &amp; spar</div>
+              </div>
+              <div class="discipline__fact">
+                <div class="discipline__fact-label">Intensity</div>
+                <div class="discipline__fact-val">High</div>
+              </div>
+              <div class="discipline__fact">
+                <div class="discipline__fact-label">Coach</div>
+                <div class="discipline__fact-val">Rob Roe</div>
+              </div>
+            </div>
+            <a href="schedule.html" class="btn-secondary" style="align-self:flex-start;">See Times <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:14px;height:14px;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="discipline" id="tech-sparring">
+        <div class="discipline__grid">
+          <div class="discipline__media">
+            <div class="discipline__num">06 / TS</div>
+            <img src="images/ring.jpg" alt="Tech Sparring in the ring" />
+          </div>
+          <div class="discipline__content">
+            <div class="meta meta--prefix">Invite-Only · Advanced</div>
+            <h2 class="discipline__title">Tech <em>Sparring.</em></h2>
+            <p class="discipline__desc">Ring IQ, defence, and fight-real scenarios in a controlled setting. Never to hurt — always to grow. By invitation from your coach once your fundamentals are sound and your head is in the right place.</p>
+            <div class="discipline__facts">
+              <div class="discipline__fact">
+                <div class="discipline__fact-label">Format</div>
+                <div class="discipline__fact-val">75 min · Ring</div>
+              </div>
+              <div class="discipline__fact">
+                <div class="discipline__fact-label">Access</div>
+                <div class="discipline__fact-val">Invite-only</div>
+              </div>
+              <div class="discipline__fact">
+                <div class="discipline__fact-label">Intensity</div>
+                <div class="discipline__fact-val">Variable</div>
+              </div>
+              <div class="discipline__fact">
+                <div class="discipline__fact-label">Lead</div>
+                <div class="discipline__fact-val">Stevie Baily</div>
+              </div>
+            </div>
+            <a href="schedule.html" class="btn-secondary" style="align-self:flex-start;">See Times <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:14px;height:14px;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- PRIVATE TRAINING -->
+    <section class="section" style="background:var(--carbon); border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline);">
+      <div class="container">
+        <div class="section-meta">One-On-One · Round 07</div>
+        <div class="section-head">
+          <h2 class="section-head__title" data-split>Private <em>Training.</em></h2>
+          <div class="section-head__aside">
+            <p>Personalized coaching with any of our certified coaches. Available in boxing, S&amp;C, Muay Thai, MMA — your goals, your schedule, your pace. Single sessions or packages available.</p>
+            <a href="promo.html" class="btn-primary" style="align-self:flex-start;">
+              Book a Session
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- YOUTH -->
+    <section class="section youth" id="youth" aria-labelledby="youth-heading">
+      <div class="container">
+        <div class="section-meta">Youth Programs · Round 08</div>
+        <div class="youth__grid">
+          <div class="youth__media">
+            <img src="images/building-champions.jpg" alt="Youth boxers and coaches at West End Athletic Club" />
+            <div class="youth__caption">— Team West End, after a Saturday session.</div>
+          </div>
+          <div class="youth__content">
+            <h2 class="youth__title" id="youth-heading" data-split>Building <em>Champions.</em></h2>
+            <p style="color:var(--ash); font-size:16px; line-height:1.75; max-width:520px;">Not every young athlete who trains here is a competitor — and they're never expected to be. Our six-level <em style="font-family:'Playfair Display';color:var(--bone);">Boxing Band System®</em> measures more than technique. Coachability. Focus. Attitude. The life skills that make a champion outside the ring.</p>
+
+            <div class="bands" aria-label="Six progression levels">
+              <div class="band band--grey"><div class="band__color"></div><div class="band__num">L1</div><div class="band__name">Grey</div></div>
+              <div class="band band--yellow"><div class="band__color"></div><div class="band__num">L2</div><div class="band__name">Yellow</div></div>
+              <div class="band band--blue"><div class="band__color"></div><div class="band__num">L3</div><div class="band__name">Blue</div></div>
+              <div class="band band--white"><div class="band__color"></div><div class="band__num">L4</div><div class="band__name">White</div></div>
+              <div class="band band--red"><div class="band__color"></div><div class="band__num">L5</div><div class="band__name">Red</div></div>
+              <div class="band band--black"><div class="band__color"></div><div class="band__num">L6</div><div class="band__name">Black</div></div>
+            </div>
+
+            <div class="programs-mini">
+              <div>
+                <div class="programs-mini__meta">Ages 4 – 8</div>
+                <div class="programs-mini__title">Little Warriors®</div>
+                <div class="programs-mini__price">from $140 / mo</div>
+              </div>
+              <div>
+                <div class="programs-mini__meta">Ages 9 – 16</div>
+                <div class="programs-mini__title">Youth Boxing</div>
+                <div class="programs-mini__price">from $140 / mo</div>
+              </div>
+            </div>
+
+            <a href="promo.html" class="btn-primary" style="align-self:flex-start; margin-top:8px;">
+              Enroll a Young Athlete
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12-WEEK CHALLENGE -->
+    <section class="section challenge" id="challenge" aria-labelledby="challenge-heading">
+      <div class="container">
+        <div class="section-meta">12-Week Challenge · Round 09</div>
+        <div class="challenge__inner">
+          <div>
+            <h2 class="challenge__title" id="challenge-heading">
+              <span class="row">Train.</span>
+              <span class="row">Fuel.</span>
+              <span class="row"><em>Transform.</em></span>
+            </h2>
+            <div class="challenge__meta">
+              <div class="challenge__price">$400</div>
+              <div class="challenge__price-label">12 weeks<br/>added to any 3-month unlimited</div>
+            </div>
+            <p style="color:var(--ash); font-size:16px; line-height:1.75; max-width:520px;">A structured program that combines training, nutrition, accountability and tracking. Designed for the member ready to commit beyond standard gym routines and turn good intentions into measurable results.</p>
+            <a href="promo.html" class="btn-primary" style="margin-top:24px;">
+              Join the Next Challenge
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <div class="challenge__details">
+            <div class="meta meta--prefix">What's Included</div>
+            <ul class="challenge__list">
+              <li>One-on-one goal assessment &amp; baseline measurements</li>
+              <li>Accountability check-ins at weeks 4 &amp; 8</li>
+              <li>Final week-12 assessment with full data review</li>
+              <li>Body, performance, and mindset trackers</li>
+              <li>12-week nutrition guide &amp; tracker</li>
+              <li>Weekly small-group focus-mitt sessions</li>
+              <li>Before-and-after photography</li>
+              <li>Risk-free: free fourth month if results aren't achieved</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-strip">
+      <div class="container cta-strip__inner">
+        <div class="meta meta--prefix">First Time</div>
+        <h2 class="cta-strip__headline">Try any class. <em>Free.</em></h2>
+        <p class="cta-strip__sub">Three days on us. Walk every floor, try every discipline, meet every coach.</p>
+        <div class="cta-strip__actions">
+          <a href="promo.html" class="btn-primary btn-primary--lg">
+            Claim 3 Days Free
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="schedule.html" class="btn-secondary">View The Schedule</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="visit">
+    <div class="container">
+      <h2 class="footer__mega"><em>Excellence</em> Through<br/>Discipline.</h2>
+      <div class="footer__grid">
+        <div class="footer__col">
+          <h4>West End Athletic Club</h4>
+          <p>A heritage boxing and strength club in Toronto's west end. Members from every walk — trained champions and weekend warriors, ages 4 to 74.</p>
+          <p class="footer__brand">— Not your average Toronto boxing gym.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Visit</h4>
+          <ul>
+            <li>283 Bering Ave</li>
+            <li>Etobicoke, ON</li>
+            <li>M8Z 3A5</li>
+            <li><a href="tel:14166211234">416 · 621 · 1234</a></li>
+            <li><a href="mailto:info@westendac.com">info@westendac.com</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Hours</h4>
+          <ul>
+            <li>Mon — Thu &nbsp;·&nbsp; 6a — 9p</li>
+            <li>Friday &nbsp;·&nbsp; 6a — 8:30p</li>
+            <li>Saturday &nbsp;·&nbsp; 8a — 3p</li>
+            <li>Sunday &nbsp;·&nbsp; 9a — 2p</li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Follow</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">YouTube</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 West End Athletic Club · Est. Toronto</span>
+        <span>Site designed in the spirit of <em style="font-family:'Playfair Display';font-style:italic;color:var(--bone);">Excellence Through Discipline</em></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/bundled/lenis.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

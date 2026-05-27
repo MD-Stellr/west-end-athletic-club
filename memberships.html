@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0A0A0A" />
+  <title>Memberships — West End Athletic Club</title>
+  <meta name="description" content="Membership options at West End Athletic Club. Drop-in, monthly unlimited, founders annual, youth. Built for the way our members actually train." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Big+Shoulders+Display:wght@700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <div class="loader" id="loader" role="status" aria-label="Loading">
+    <div class="loader__bar">
+      <span class="meta meta--prefix">EST. 2015</span>
+      <span class="meta meta--prefix">TORONTO / CANADA</span>
+    </div>
+    <div class="loader__center">
+      <div class="loader__counter"><span id="counter">00</span><sup>%</sup></div>
+    </div>
+    <div class="loader__bar">
+      <span class="meta meta--prefix">WEC / VOL.IX</span>
+      <span class="meta meta--prefix">MEMBERSHIPS</span>
+    </div>
+    <div class="loader__brand">Not Your Average Toronto Boxing Gym</div>
+    <div class="loader__progress"><div class="loader__progress-fill"></div></div>
+  </div>
+
+  <header class="nav" id="nav">
+    <a href="index.html" class="nav__logo" aria-label="West End Athletic Club">
+      <div class="nav__logo-mark">W</div>
+      <div class="nav__logo-text">WEST END<span>Athletic Club · TO</span></div>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="about.html" class="nav__link">The Club</a>
+      <a href="classes.html" class="nav__link">Classes</a>
+      <a href="schedule.html" class="nav__link">Schedule</a>
+      <a href="memberships.html" class="nav__link">Memberships</a>
+      <a href="index.html#visit" class="nav__link">Visit</a>
+    </nav>
+    <div style="display:flex; align-items:center;">
+      <a href="promo.html" class="nav__cta">
+        3 Days Free
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <button class="nav__burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="about.html" class="mobile-menu__link">The Club</a>
+    <a href="classes.html" class="mobile-menu__link">Classes</a>
+    <a href="schedule.html" class="mobile-menu__link">Schedule</a>
+    <a href="memberships.html" class="mobile-menu__link"><em style="font-family:'Playfair Display';font-style:italic;color:#E63946;">Memberships</em></a>
+    <a href="promo.html" class="mobile-menu__link">3 Days Free</a>
+    <a href="index.html#visit" class="mobile-menu__link">Visit</a>
+  </div>
+
+  <main id="top">
+
+    <section class="page-hero" aria-labelledby="memberships-heading" style="min-height:55vh;">
+      <div class="page-hero__media">
+        <img src="images/f17.jpg" alt="Strength floor at West End Athletic Club" />
+      </div>
+      <div class="page-hero__breadcrumbs">
+        <a href="index.html">Home</a><span>·</span><a href="memberships.html">Memberships</a>
+      </div>
+      <div class="page-hero__container">
+        <div class="page-hero__meta">
+          <span class="meta meta--prefix">Memberships · Vol. IX</span>
+          <span class="meta">Built for the long haul</span>
+        </div>
+        <h1 class="page-hero__title" id="memberships-heading" data-split>One door. Four <em>ways</em> in.</h1>
+        <p class="page-hero__sub">Drop in. Train monthly. Lock founders annual. Or send a kid to youth programs. Honest pricing, month-to-month, cancel any time — no fine-print contracts engineered to keep you paying.</p>
+        <div class="page-hero__proof" style="display:inline-flex; align-items:center; gap:12px; margin-top:24px; padding:10px 14px; background:rgba(245,245,240,0.04); border:1px solid var(--hairline); font-family:var(--font-mono); font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--ash); max-width:fit-content; flex-wrap:wrap;">
+          <span style="color:#F5C518; font-size:13px;">★★★★★</span>
+          <span style="color:var(--bone);">4.9 on Google · 280+ members can't be wrong</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIER CARDS -->
+    <section class="tiers" aria-label="Membership tiers">
+
+      <article class="tier">
+        <div class="tier__num">— Tier 01</div>
+        <h2 class="tier__name">Drop <em>In.</em></h2>
+        <div class="tier__price">
+          <span class="tier__price-num">—</span>
+          <span class="tier__price-period">Per Class</span>
+        </div>
+        <p class="tier__desc">For the visiting fighter, the friend in town, or the weekend warrior who can't commit to a regular schedule. Pay-per-class access.</p>
+        <ul class="tier__features">
+          <li>Any group class on the schedule</li>
+          <li>No monthly commitment</li>
+          <li>Use within 14 days of purchase</li>
+          <li>Locker room &amp; sauna access</li>
+        </ul>
+        <a href="promo.html" class="btn-secondary tier__cta">Contact For Pricing</a>
+      </article>
+
+      <article class="tier tier--featured">
+        <div class="tier__num">— Tier 02</div>
+        <h2 class="tier__name">Unlimited <em>Monthly.</em></h2>
+        <div class="tier__price">
+          <span class="tier__price-num">—</span>
+          <span class="tier__price-period">/ Month</span>
+        </div>
+        <p class="tier__desc">The membership most of our community runs on. All group classes, every discipline, every day — no caps, no quotas, no surcharges for the popular slots.</p>
+        <ul class="tier__features">
+          <li>Unlimited group classes — every discipline</li>
+          <li>Open gym access during posted hours</li>
+          <li>Locker room, sauna &amp; coffee bar</li>
+          <li>Member rate on private training</li>
+          <li>Eligible for 12-Week Challenge</li>
+          <li>Month-to-month — cancel any time</li>
+        </ul>
+        <a href="promo.html" class="btn-primary tier__cta">Contact For Pricing</a>
+      </article>
+
+      <article class="tier">
+        <div class="tier__num">— Tier 03</div>
+        <h2 class="tier__name">Founders <em>Annual.</em></h2>
+        <div class="tier__price">
+          <span class="tier__price-num">—</span>
+          <span class="tier__price-period">/ Year</span>
+        </div>
+        <p class="tier__desc">For the member who has decided this is their gym. Annual commitment, founders rate locked for life, plus member-only perks at Friday Night Fights and special events.</p>
+        <ul class="tier__features">
+          <li>Everything in Unlimited Monthly</li>
+          <li>Founders rate locked for life</li>
+          <li>Priority access to Friday Night Fights</li>
+          <li>Two complimentary guest passes / month</li>
+          <li>Annual fight team showcase invite</li>
+          <li>One free private session per quarter</li>
+        </ul>
+        <a href="promo.html" class="btn-secondary tier__cta">Contact For Pricing</a>
+      </article>
+
+      <article class="tier">
+        <div class="tier__num">— Tier 04</div>
+        <h2 class="tier__name">Youth <em>Programs.</em></h2>
+        <div class="tier__price">
+          <span class="tier__price-num">$140</span>
+          <span class="tier__price-period">From / Month</span>
+        </div>
+        <p class="tier__desc">Little Warriors® (ages 4–8) and Youth Boxing (ages 9–16). Two sessions per week, certified youth coaches, Boxing Band System® progression tracking.</p>
+        <ul class="tier__features">
+          <li>Two coached sessions per week</li>
+          <li>Boxing Band System® progression</li>
+          <li>Saturday team training</li>
+          <li>End-of-year showcase &amp; band ceremony</li>
+          <li>Family discount for siblings</li>
+          <li>Optional fight team pathway</li>
+        </ul>
+        <a href="promo.html" class="btn-secondary tier__cta">Enroll a Young Athlete</a>
+      </article>
+
+    </section>
+
+    <!-- COMPARISON / WHAT'S INCLUDED -->
+    <section class="section" style="background:var(--carbon); border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline);">
+      <div class="container">
+        <div class="section-meta">What's Included · Round 05</div>
+        <div class="section-head">
+          <h2 class="section-head__title" data-split>The <em>standards</em> don't change.</h2>
+          <div class="section-head__aside">
+            <p>Every membership tier has the same access to the same room, the same coaches, the same standard. The only difference is how often you walk in and what perks you bank along the way.</p>
+          </div>
+        </div>
+
+        <div class="compare">
+          <div class="compare__row compare__row--head">
+            <div class="compare__label"></div>
+            <div class="compare__cell">Drop-In</div>
+            <div class="compare__cell compare__cell--accent">Monthly</div>
+            <div class="compare__cell">Annual</div>
+            <div class="compare__cell">Youth</div>
+          </div>
+          <div class="compare__row">
+            <div class="compare__label">All group classes</div>
+            <div class="compare__cell" data-tier="Drop-In"><span class="compare__mark">·</span></div>
+            <div class="compare__cell" data-tier="Monthly"><span class="compare__mark">·</span></div>
+            <div class="compare__cell" data-tier="Annual"><span class="compare__mark">·</span></div>
+            <div class="compare__cell" data-tier="Youth"><span class="compare__text">Youth</span></div>
+          </div>
+          <div class="compare__row">
+            <div class="compare__label">Open gym access</div>
+            <div class="compare__cell" data-tier="Drop-In"><span class="compare__none">—</span></div>
+            <div class="compare__cell" data-tier="Monthly"><span class="compare__mark">·</span></div>
+            <div class="compare__cell" data-tier="Annual"><span class="compare__mark">·</span></div>
+            <div class="compare__cell" data-tier="Youth"><span class="compare__none">—</span></div>
+          </div>
+          <div class="compare__row">
+            <div class="compare__label">Locker room &amp; sauna</div>
+            <div class="compare__cell" data-tier="Drop-In"><span class="compare__mark">·</span></div>
+            <div class="compare__cell" data-tier="Monthly"><span class="compare__mark">·</span></div>
+            <div class="compare__cell" data-tier="Annual"><span class="compare__mark">·</span></div>
+            <div class="compare__cell" data-tier="Youth"><span class="compare__mark">·</span></div>
+          </div>
+          <div class="compare__row">
+            <div class="compare__label">Member rate on private training</div>
+            <div class="compare__cell" data-tier="Drop-In"><span class="compare__none">—</span></div>
+            <div class="compare__cell" data-tier="Monthly"><span class="compare__mark">·</span></div>
+            <div class="compare__cell" data-tier="Annual"><span class="compare__mark">·</span></div>
+            <div class="compare__cell" data-tier="Youth"><span class="compare__mark">·</span></div>
+          </div>
+          <div class="compare__row">
+            <div class="compare__label">12-Week Challenge eligibility</div>
+            <div class="compare__cell" data-tier="Drop-In"><span class="compare__none">—</span></div>
+            <div class="compare__cell" data-tier="Monthly"><span class="compare__mark">·</span></div>
+            <div class="compare__cell" data-tier="Annual"><span class="compare__mark">·</span></div>
+            <div class="compare__cell" data-tier="Youth"><span class="compare__none">—</span></div>
+          </div>
+          <div class="compare__row">
+            <div class="compare__label">Founders rate locked for life</div>
+            <div class="compare__cell" data-tier="Drop-In"><span class="compare__none">—</span></div>
+            <div class="compare__cell" data-tier="Monthly"><span class="compare__none">—</span></div>
+            <div class="compare__cell" data-tier="Annual"><span class="compare__mark">·</span></div>
+            <div class="compare__cell" data-tier="Youth"><span class="compare__none">—</span></div>
+          </div>
+          <div class="compare__row">
+            <div class="compare__label">Free private session / quarter</div>
+            <div class="compare__cell" data-tier="Drop-In"><span class="compare__none">—</span></div>
+            <div class="compare__cell" data-tier="Monthly"><span class="compare__none">—</span></div>
+            <div class="compare__cell" data-tier="Annual"><span class="compare__mark">·</span></div>
+            <div class="compare__cell" data-tier="Youth"><span class="compare__none">—</span></div>
+          </div>
+          <div class="compare__row">
+            <div class="compare__label">Commitment</div>
+            <div class="compare__cell" data-tier="Drop-In"><span class="compare__text">None</span></div>
+            <div class="compare__cell" data-tier="Monthly"><span class="compare__text">Monthly</span></div>
+            <div class="compare__cell" data-tier="Annual"><span class="compare__text">Annual</span></div>
+            <div class="compare__cell" data-tier="Youth"><span class="compare__text">Monthly</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADD-ONS -->
+    <section class="section">
+      <div class="container">
+        <div class="section-meta">Add-Ons · Round 06</div>
+        <div class="section-head">
+          <h2 class="section-head__title" data-split>Stack it <em>up.</em></h2>
+          <div class="section-head__aside">
+            <p>Optional programs that layer on top of any membership. Members get priority booking and member pricing.</p>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr; gap:16px;">
+          <article style="display:grid; grid-template-columns:60px 1fr 1fr 200px; gap:32px; padding:32px 0; border-top:1px solid var(--hairline); align-items:center;">
+            <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.22em; color:var(--fight);">— 01</div>
+            <h3 style="font-family:var(--font-display); font-weight:900; font-size:clamp(24px,2.5vw,32px); letter-spacing:-0.02em; color:var(--bone); margin:0;">Private <em style="font-family:'Playfair Display';font-style:italic;color:var(--fight);">Training</em></h3>
+            <p style="color:var(--ash); font-size:14px; line-height:1.6; max-width:480px; margin:0;">One-on-one coaching in boxing, S&amp;C, Muay Thai or MMA. Packages of 5, 10, or 20 sessions. Member rate applies.</p>
+            <a href="promo.html" style="font-family:var(--font-mono); font-size:10px; letter-spacing:0.24em; text-transform:uppercase; color:var(--fight); text-decoration:none; text-align:right;">Inquire →</a>
+          </article>
+          <article style="display:grid; grid-template-columns:60px 1fr 1fr 200px; gap:32px; padding:32px 0; border-top:1px solid var(--hairline); align-items:center;">
+            <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.22em; color:var(--fight);">— 02</div>
+            <h3 style="font-family:var(--font-display); font-weight:900; font-size:clamp(24px,2.5vw,32px); letter-spacing:-0.02em; color:var(--bone); margin:0;">12-Week <em style="font-family:'Playfair Display';font-style:italic;color:var(--fight);">Challenge</em></h3>
+            <p style="color:var(--ash); font-size:14px; line-height:1.6; max-width:480px; margin:0;">Structured transformation program — training, nutrition, accountability, tracking. $400 add-on to any 3-month unlimited.</p>
+            <a href="classes.html#challenge" style="font-family:var(--font-mono); font-size:10px; letter-spacing:0.24em; text-transform:uppercase; color:var(--fight); text-decoration:none; text-align:right;">See Details →</a>
+          </article>
+          <article style="display:grid; grid-template-columns:60px 1fr 1fr 200px; gap:32px; padding:32px 0; border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline); align-items:center;">
+            <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.22em; color:var(--fight);">— 03</div>
+            <h3 style="font-family:var(--font-display); font-weight:900; font-size:clamp(24px,2.5vw,32px); letter-spacing:-0.02em; color:var(--bone); margin:0;">Corporate <em style="font-family:'Playfair Display';font-style:italic;color:var(--fight);">Wellness</em></h3>
+            <p style="color:var(--ash); font-size:14px; line-height:1.6; max-width:480px; margin:0;">Team training, off-site programs, executive packages. Custom-built for your team's size, schedule, and goals.</p>
+            <a href="promo.html" style="font-family:var(--font-mono); font-size:10px; letter-spacing:0.24em; text-transform:uppercase; color:var(--fight); text-decoration:none; text-align:right;">Inquire →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" style="background:var(--carbon); border-top:1px solid var(--hairline);">
+      <div class="container">
+        <div class="section-meta">Common Questions · Round 07</div>
+        <div class="section-head">
+          <h2 class="section-head__title" data-split>The <em>fine</em> print, in plain English.</h2>
+          <div class="section-head__aside">
+            <p>Quick answers to what most people ask before signing up. Still have a question? Hit us up — we'd rather answer it now than have you guess later.</p>
+          </div>
+        </div>
+
+        <div class="faq">
+          <div class="faq__item">
+            <h3 class="faq__q">Why don't you list <em>prices?</em></h3>
+            <p class="faq__a">Because membership pricing changes with promotions, season, and your specific schedule. Reach out — we'll walk you through what fits in two minutes. No high-pressure call. No follow-up spam.</p>
+          </div>
+          <div class="faq__item">
+            <h3 class="faq__q">Do I have to sign a long contract?</h3>
+            <p class="faq__a">No. Monthly memberships are month-to-month. Annual founders memberships lock your rate for life — but if life changes, talk to us. We've never trapped anyone in a membership they couldn't use.</p>
+          </div>
+          <div class="faq__item">
+            <h3 class="faq__q">What's the difference between a class and open gym?</h3>
+            <p class="faq__a">Classes are coached group sessions — show up and follow the program. Open gym is independent training with access to bags, ring, weights, and machines during posted hours. Most members use a mix of both.</p>
+          </div>
+          <div class="faq__item">
+            <h3 class="faq__q">I've never boxed. Will I get my head taken off?</h3>
+            <p class="faq__a">No. Group classes are non-contact unless you opt into sparring. Sparring is invite-only and only happens after your coach decides you're ready — and even then, never to hurt, always to grow.</p>
+          </div>
+          <div class="faq__item">
+            <h3 class="faq__q">Can I freeze my membership?</h3>
+            <p class="faq__a">Yes — for medical, travel, or work reasons. Just tell us in advance. We'd rather pause it than lose you.</p>
+          </div>
+          <div class="faq__item">
+            <h3 class="faq__q">Is there parking?</h3>
+            <p class="faq__a">Yes — free on-site lot at 283 Bering Ave, plus street parking on Bering and Wingold. Bike racks at the front entrance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-strip">
+      <div class="container cta-strip__inner">
+        <div class="meta meta--prefix">Try Before You Sign</div>
+        <h2 class="cta-strip__headline">Three days. <em>On us.</em></h2>
+        <p class="cta-strip__sub">Before you commit to any tier — try the room. Three free days of group classes or open gym. New members only.</p>
+        <div class="cta-strip__actions">
+          <a href="promo.html" class="btn-primary btn-primary--lg">
+            Claim 3 Days Free
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="schedule.html" class="btn-secondary">View The Schedule</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="visit">
+    <div class="container">
+      <h2 class="footer__mega"><em>Excellence</em> Through<br/>Discipline.</h2>
+      <div class="footer__grid">
+        <div class="footer__col">
+          <h4>West End Athletic Club</h4>
+          <p>A heritage boxing and strength club in Toronto's west end. Members from every walk — trained champions and weekend warriors, ages 4 to 74.</p>
+          <p class="footer__brand">— Not your average Toronto boxing gym.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Visit</h4>
+          <ul>
+            <li>283 Bering Ave</li>
+            <li>Etobicoke, ON</li>
+            <li>M8Z 3A5</li>
+            <li><a href="tel:14166211234">416 · 621 · 1234</a></li>
+            <li><a href="mailto:info@westendac.com">info@westendac.com</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Hours</h4>
+          <ul>
+            <li>Mon — Thu &nbsp;·&nbsp; 6a — 9p</li>
+            <li>Friday &nbsp;·&nbsp; 6a — 8:30p</li>
+            <li>Saturday &nbsp;·&nbsp; 8a — 3p</li>
+            <li>Sunday &nbsp;·&nbsp; 9a — 2p</li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Follow</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">YouTube</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 West End Athletic Club · Est. Toronto</span>
+        <span>Site designed in the spirit of <em style="font-family:'Playfair Display';font-style:italic;color:var(--bone);">Excellence Through Discipline</em></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/bundled/lenis.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

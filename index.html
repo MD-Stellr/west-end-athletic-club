@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0A0A0A" />
+  <title>West End Athletic Club — Not Your Average Toronto Boxing Gym</title>
+  <meta name="description" content="A heritage boxing and strength club in Toronto. 10,000 sq ft of brick, leather and steel. Est. 2015 — Etobicoke." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Big+Shoulders+Display:wght@700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div class="loader" id="loader" role="status" aria-label="Loading">
+    <div class="loader__bar">
+      <span class="meta meta--prefix">EST. 2015</span>
+      <span class="meta meta--prefix">TORONTO / CANADA</span>
+    </div>
+    <div class="loader__center">
+      <div class="loader__counter"><span id="counter">00</span><sup>%</sup></div>
+    </div>
+    <div class="loader__bar">
+      <span class="meta meta--prefix">WEC / VOL.IX</span>
+      <span class="meta meta--prefix">EXCELLENCE THROUGH DISCIPLINE</span>
+    </div>
+    <div class="loader__brand">Not Your Average Toronto Boxing Gym</div>
+    <div class="loader__progress"><div class="loader__progress-fill"></div></div>
+  </div>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <a href="index.html" class="nav__logo" aria-label="West End Athletic Club">
+      <div class="nav__logo-mark">W</div>
+      <div class="nav__logo-text">WEST END<span>Athletic Club · TO</span></div>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="about.html" class="nav__link">The Club</a>
+      <a href="classes.html" class="nav__link">Classes</a>
+      <a href="schedule.html" class="nav__link">Schedule</a>
+      <a href="memberships.html" class="nav__link">Memberships</a>
+      <a href="#visit" class="nav__link">Visit</a>
+    </nav>
+    <div style="display:flex; align-items:center;">
+      <a href="promo.html" class="nav__cta">
+        3 Days Free
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <button class="nav__burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="about.html" class="mobile-menu__link">The Club</a>
+    <a href="classes.html" class="mobile-menu__link">Classes</a>
+    <a href="schedule.html" class="mobile-menu__link"><em style="font-family:'Playfair Display';font-style:italic;color:#E63946;">Schedule</em></a>
+    <a href="memberships.html" class="mobile-menu__link">Memberships</a>
+    <a href="promo.html" class="mobile-menu__link">3 Days Free</a>
+    <a href="#visit" class="mobile-menu__link">Visit</a>
+  </div>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero__media">
+        <img src="images/f1.jpg" alt="The heavy bag row at West End Athletic Club — brick walls, hardwood floor, championship posters" />
+      </div>
+
+      <div class="hero__topbar">
+        <span class="meta meta--prefix">VOL. IX / ROUND 01</span>
+        <span class="meta meta--prefix">EST. 2015 — TORONTO</span>
+      </div>
+
+      <h1 class="hero__headline" id="hero-heading">Not Your <em>Average</em> Toronto Boxing Gym</h1>
+
+      <p class="hero__sub">Real coaching. Real conditioning. Real community. 10,000 sq ft of brick and steel in Etobicoke — boxing, S&amp;C, Muay Thai, MMA, sparring. Beginners welcome, fighters respected.</p>
+
+      <div class="hero__actions">
+        <a href="promo.html" class="btn-primary">
+          Claim 3 Days Free
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="classes.html" class="btn-secondary">
+          Explore Classes
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="hero__proof" aria-label="Social proof">
+        <span class="hero__proof-stars" aria-hidden="true">★★★★★</span>
+        <span class="hero__proof-text">4.9 on Google · 280+ reviews · Toronto, Etobicoke</span>
+      </div>
+
+      <p class="hero__caption">
+        — Heavy bag at first light.<br/>
+        Bering Avenue, 5:30 AM session.
+      </p>
+
+      <div class="hero__scroll" aria-hidden="true">
+        <span>Scroll</span>
+        <span class="hero__scroll-line"></span>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span class="marquee__item">Keep It Simple</span><span class="marquee__item"><span class="dot"></span></span>
+        <span class="marquee__item">Master The <em>Basics</em></span><span class="marquee__item"><span class="dot"></span></span>
+        <span class="marquee__item">Work Harder</span><span class="marquee__item"><span class="dot"></span></span>
+        <span class="marquee__item">Be <em>Stronger</em></span><span class="marquee__item"><span class="dot"></span></span>
+        <span class="marquee__item">Keep It Simple</span><span class="marquee__item"><span class="dot"></span></span>
+        <span class="marquee__item">Master The <em>Basics</em></span><span class="marquee__item"><span class="dot"></span></span>
+        <span class="marquee__item">Work Harder</span><span class="marquee__item"><span class="dot"></span></span>
+        <span class="marquee__item">Be <em>Stronger</em></span><span class="marquee__item"><span class="dot"></span></span>
+      </div>
+      <div class="marquee__track" aria-hidden="true">
+        <span class="marquee__item">Keep It Simple</span><span class="marquee__item"><span class="dot"></span></span>
+        <span class="marquee__item">Master The <em>Basics</em></span><span class="marquee__item"><span class="dot"></span></span>
+        <span class="marquee__item">Work Harder</span><span class="marquee__item"><span class="dot"></span></span>
+        <span class="marquee__item">Be <em>Stronger</em></span><span class="marquee__item"><span class="dot"></span></span>
+        <span class="marquee__item">Keep It Simple</span><span class="marquee__item"><span class="dot"></span></span>
+        <span class="marquee__item">Master The <em>Basics</em></span><span class="marquee__item"><span class="dot"></span></span>
+        <span class="marquee__item">Work Harder</span><span class="marquee__item"><span class="dot"></span></span>
+        <span class="marquee__item">Be <em>Stronger</em></span><span class="marquee__item"><span class="dot"></span></span>
+      </div>
+    </div>
+
+    <!-- STATS STRIP -->
+    <section class="stats" aria-label="Club facts">
+      <div class="stats__grid">
+        <div class="stat">
+          <div class="stat__num"><span class="count" data-count="10000" data-suffix="">0</span></div>
+          <div class="stat__label">Sq Ft Facility</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num"><span class="count" data-count="8" data-suffix="+">0</span></div>
+          <div class="stat__label">Certified Coaches</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num"><span class="count" data-count="11" data-suffix="">0</span></div>
+          <div class="stat__label">Training Disciplines</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num"><em>2015</em></div>
+          <div class="stat__label">Established · Toronto</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION NAV — the main home content -->
+    <section class="section-nav" aria-labelledby="navigation-heading">
+      <div class="section-nav__head">
+        <span class="meta meta--prefix">The Magazine · Vol. IX</span>
+        <h2 class="section-nav__title" id="navigation-heading" data-split>Four <em>rooms.</em> Pick one.</h2>
+      </div>
+
+      <div class="section-nav__grid">
+        <a class="card" href="about.html">
+          <div class="card__media">
+            <img src="images/facility-main.jpg" alt="The ring at West End Athletic Club" loading="lazy" />
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="meta meta--prefix">Round 01</span>
+              <span class="card__arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+            <h3 class="card__title">The <em>Club.</em></h3>
+            <p class="card__sub">Our mission, our coaches, our 10,000 sq ft of brick and steel. The room that built a decade.</p>
+          </div>
+        </a>
+
+        <a class="card" href="classes.html">
+          <div class="card__media">
+            <img src="images/group-classes.png" alt="Fitness boxing class at West End" loading="lazy" />
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="meta meta--prefix">Round 02</span>
+              <span class="card__arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+            <h3 class="card__title"><em>Classes.</em></h3>
+            <p class="card__sub">Six disciplines under one roof. Group, private, youth, sparring, strength &amp; conditioning.</p>
+          </div>
+        </a>
+
+        <a class="card" href="schedule.html">
+          <div class="card__media">
+            <img src="images/f9.jpg" alt="The training floor" loading="lazy" />
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="meta meta--prefix">Round 03</span>
+              <span class="card__arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+            <h3 class="card__title">The <em>Schedule.</em></h3>
+            <p class="card__sub">Forty-plus classes a week — early bird through evening, weekend mornings included.</p>
+          </div>
+        </a>
+
+        <a class="card" href="memberships.html">
+          <div class="card__media">
+            <img src="images/community.jpeg" alt="The West End community" loading="lazy" />
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="meta meta--prefix">Round 04</span>
+              <span class="card__arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+            <h3 class="card__title"><em>Memberships.</em></h3>
+            <p class="card__sub">Drop-in, monthly, founders annual, youth. One door. Four ways in.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- CONVERSION CTA STRIP -->
+    <section class="cta-strip" id="first-time" aria-labelledby="cta-strip-heading">
+      <div class="container cta-strip__inner">
+        <div class="meta meta--prefix">First Time</div>
+        <h2 class="cta-strip__headline" id="cta-strip-heading">
+          Three days. <em>On us.</em> No catch.
+        </h2>
+        <p class="cta-strip__sub">Walk in. Try every class on the schedule. Meet a coach. Decide afterward — no card, no contract. New members only.</p>
+        <div class="cta-strip__actions">
+          <a href="promo.html" class="btn-primary btn-primary--lg">
+            Claim 3 Days Free
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="tel:14166211234" class="btn-secondary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:14px;height:14px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+            Or Call 416 · 621 · 1234
+          </a>
+        </div>
+        <ul class="cta-strip__terms" aria-label="Offer terms">
+          <li>· New members only</li>
+          <li>· Group classes or open gym</li>
+          <li>· Valid 7 days after sign-up</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="visit">
+    <div class="container">
+      <h2 class="footer__mega"><em>Excellence</em> Through<br/>Discipline.</h2>
+
+      <div class="footer__grid">
+        <div class="footer__col">
+          <h4>West End Athletic Club</h4>
+          <p>A heritage boxing and strength club in Toronto's west end. Members from every walk — trained champions and weekend warriors, ages 4 to 74.</p>
+          <p class="footer__brand">— Not your average Toronto boxing gym.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Visit</h4>
+          <ul>
+            <li>283 Bering Ave</li>
+            <li>Etobicoke, ON</li>
+            <li>M8Z 3A5</li>
+            <li><a href="tel:14166211234">416 · 621 · 1234</a></li>
+            <li><a href="mailto:info@westendac.com">info@westendac.com</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Hours</h4>
+          <ul>
+            <li>Mon — Thu &nbsp;·&nbsp; 6a — 9p</li>
+            <li>Friday &nbsp;·&nbsp; 6a — 8:30p</li>
+            <li>Saturday &nbsp;·&nbsp; 8a — 3p</li>
+            <li>Sunday &nbsp;·&nbsp; 9a — 2p</li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Follow</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">YouTube</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>© 2026 West End Athletic Club · Est. Toronto</span>
+        <span>Site designed in the spirit of <em style="font-family:'Playfair Display';font-style:italic;color:var(--bone);">Excellence Through Discipline</em></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/bundled/lenis.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

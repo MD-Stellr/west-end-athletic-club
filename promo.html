@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0A0A0A" />
+  <title>3 Days Free — West End Athletic Club</title>
+  <meta name="description" content="Three free days of group classes or open gym at West End Athletic Club. New members only. No catch. Claim your pass below." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Big+Shoulders+Display:wght@700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="has-promo-sticky">
+
+  <!-- LOADER -->
+  <div class="loader" id="loader" role="status" aria-label="Loading">
+    <div class="loader__bar">
+      <span class="meta meta--prefix">EST. 2015</span>
+      <span class="meta meta--prefix">TORONTO / CANADA</span>
+    </div>
+    <div class="loader__center">
+      <div class="loader__counter"><span id="counter">00</span><sup>%</sup></div>
+    </div>
+    <div class="loader__bar">
+      <span class="meta meta--prefix">WEC / VOL.IX</span>
+      <span class="meta meta--prefix">3 DAYS FREE</span>
+    </div>
+    <div class="loader__brand">Three days. On us. No catch.</div>
+    <div class="loader__progress"><div class="loader__progress-fill"></div></div>
+  </div>
+
+  <!-- Minimal nav — conversion focus, phone replaces CTA button -->
+  <header class="nav" id="nav">
+    <a href="index.html" class="nav__logo" aria-label="West End Athletic Club">
+      <div class="nav__logo-mark">W</div>
+      <div class="nav__logo-text">WEST END<span>Athletic Club · TO</span></div>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="about.html" class="nav__link">The Club</a>
+      <a href="classes.html" class="nav__link">Classes</a>
+      <a href="schedule.html" class="nav__link">Schedule</a>
+      <a href="memberships.html" class="nav__link">Memberships</a>
+    </nav>
+    <div style="display:flex; align-items:center;">
+      <a href="tel:14166211234" class="nav__cta" style="background:transparent; border:1px solid rgba(245,245,240,0.4); color:var(--bone);">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:14px;height:14px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+        416 · 621 · 1234
+      </a>
+      <button class="nav__burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="about.html" class="mobile-menu__link">The Club</a>
+    <a href="classes.html" class="mobile-menu__link">Classes</a>
+    <a href="schedule.html" class="mobile-menu__link">Schedule</a>
+    <a href="memberships.html" class="mobile-menu__link">Memberships</a>
+    <a href="#promo-form" class="mobile-menu__link"><em style="font-family:'Playfair Display';font-style:italic;color:#E63946;">Claim Free Pass</em></a>
+  </div>
+
+  <main id="top">
+
+    <!-- HERO + FORM ABOVE FOLD -->
+    <section class="promo-hero" aria-labelledby="promo-heading">
+      <div class="promo-hero__media">
+        <img src="images/f1.jpg" alt="" />
+      </div>
+
+      <div class="promo-hero__inner">
+        <!-- LEFT: offer copy -->
+        <div class="promo-hero__content">
+          <span class="promo-hero__badge">
+            Limited — New Members Only
+          </span>
+          <h1 class="promo-hero__title" id="promo-heading">
+            3 Days <em>Free.</em> No catch.
+          </h1>
+          <p class="promo-hero__sub">
+            Three full days inside our 10,000 sq ft west-end club. Every group class, the bag room, the Eleiko platform, the sauna — all in. No card on file, no commitment, no follow-up sales calls.
+          </p>
+
+          <div class="promo-hero__trust">
+            <div class="promo-hero__trust-stat">
+              <div class="promo-hero__trust-num"><em>2015</em></div>
+              <div class="promo-hero__trust-label">Established · Toronto</div>
+            </div>
+            <div class="promo-hero__trust-stat">
+              <div class="promo-hero__trust-num">10,000</div>
+              <div class="promo-hero__trust-label">Sq Ft Facility</div>
+            </div>
+            <div class="promo-hero__trust-stat">
+              <div class="promo-hero__trust-num">8+</div>
+              <div class="promo-hero__trust-label">Certified Coaches</div>
+            </div>
+            <div class="promo-hero__trust-stat">
+              <div class="promo-hero__trust-num">40+</div>
+              <div class="promo-hero__trust-label">Classes / Week</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: lead form -->
+        <!--
+          ============================================================
+          GHL PIPELINE WIRING NEEDED
+          ============================================================
+          1. Replace the form's `action` attribute below with your GHL
+             webhook endpoint, OR
+          2. Swap this entire <form> block for the embed code from your
+             GHL form builder.
+          Field names below are GHL-friendly:
+            first_name, last_name, email, phone, source
+          The hidden `source` field tags leads as "3 Days Free Promo"
+          so you can route them to the correct pipeline.
+          ============================================================
+        -->
+        <form
+          id="promo-form"
+          class="lead-form"
+          action="#"
+          method="POST"
+          aria-labelledby="form-title"
+        >
+          <h2 class="lead-form__title" id="form-title">
+            Claim your <em>free pass.</em>
+          </h2>
+          <p class="lead-form__lead">Three fields, ten seconds. Pass arrives by text within 5 minutes.</p>
+
+          <div class="lead-form__row">
+            <div class="lead-form__field">
+              <label class="lead-form__label" for="first_name">First Name</label>
+              <input class="lead-form__input" type="text" id="first_name" name="first_name" autocomplete="given-name" placeholder="Jordan" required />
+            </div>
+          </div>
+
+          <div class="lead-form__row">
+            <div class="lead-form__field">
+              <label class="lead-form__label" for="email">Email</label>
+              <input class="lead-form__input" type="email" id="email" name="email" autocomplete="email" inputmode="email" placeholder="you@email.com" required />
+            </div>
+          </div>
+
+          <div class="lead-form__row">
+            <div class="lead-form__field">
+              <label class="lead-form__label" for="phone">Mobile <span class="lead-form__hint">— we'll text your pass</span></label>
+              <input class="lead-form__input" type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="(416) 555-0123" required />
+            </div>
+          </div>
+
+          <details class="lead-form__optional">
+            <summary>Tell us what you're into <span>(optional)</span></summary>
+            <div class="lead-form__row" style="margin-top:14px;">
+              <div class="lead-form__field">
+                <label class="lead-form__label" for="interest">I'm Most Interested In</label>
+                <select class="lead-form__select" id="interest" name="interest">
+                  <option value="">No preference — show me everything</option>
+                  <option value="fitness-boxing">Fitness Boxing</option>
+                  <option value="technical-boxing">Technical Boxing</option>
+                  <option value="strength-conditioning">Strength &amp; Conditioning</option>
+                  <option value="muay-thai">Muay Thai</option>
+                  <option value="mma">MMA</option>
+                  <option value="youth">Youth Program</option>
+                  <option value="private">Private Training</option>
+                </select>
+              </div>
+            </div>
+          </details>
+
+          <!-- Hidden routing fields for GHL — auto-filled, no friction for the user -->
+          <input type="hidden" name="last_name" value="" />
+          <input type="hidden" name="source" value="3 Days Free Promo" />
+          <input type="hidden" name="page" value="promo.html" />
+
+          <button type="submit" class="btn-primary lead-form__submit">
+            Claim My Free Pass
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </button>
+
+          <p class="lead-form__legal">
+            No spam. No sales calls. New members only · One per household.
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <!-- SOCIAL PROOF BAR -->
+    <section style="background:var(--carbon); border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline); padding:32px clamp(20px,5vw,48px); overflow:hidden;">
+      <div class="container" style="display:grid; grid-template-columns:1fr; gap:24px; align-items:center;">
+        <div style="display:flex; align-items:center; justify-content:center; gap:32px; flex-wrap:wrap;">
+          <div style="display:flex; align-items:center; gap:8px;">
+            <span style="color:var(--fight); font-size:22px; letter-spacing:0.05em;">★★★★★</span>
+            <span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:var(--ash);">4.9 · Google</span>
+          </div>
+          <span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:var(--fog);">·</span>
+          <span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:var(--ash);">Boxing Ontario Sanctioned</span>
+          <span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:var(--fog);">·</span>
+          <span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:var(--ash);">AIBA · NCCP · CSEP</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT'S INCLUDED -->
+    <section class="promo-included">
+      <div class="promo-section">
+        <div class="promo-included__grid">
+          <div>
+            <div class="meta meta--prefix" style="margin-bottom:16px;">What's Inside Your Pass</div>
+            <h2 class="promo-included__title">Three days. <em>Everything.</em></h2>
+            <p style="color:var(--ash); font-size:16px; line-height:1.75; max-width:480px;">Your free pass unlocks the full club — every group class on the schedule, every piece of equipment, every coach on the floor. No tiered access. No upgrades upsold mid-workout.</p>
+          </div>
+          <ul>
+            <li><span><b>Three Consecutive Days</b>Use them in a row, starting whenever you book your first class.</span></li>
+            <li><span><b>All Group Classes</b>Fitness Boxing, Technical, Strength &amp; Conditioning, Muay Thai, MMA — your pick.</span></li>
+            <li><span><b>Open Gym Included</b>Bags, ring, weights, machines — whenever the floor is open.</span></li>
+            <li><span><b>Sauna &amp; Locker Room</b>Hot-rock sauna, change rooms, day lockers, full showers.</span></li>
+            <li><span><b>One-Time Purchase</b>New members only. One pass per household. Valid 7 days after sign-up.</span></li>
+            <li><span><b>Zero Pressure</b>No sales pitch when you walk in. Try it. Decide afterward. On your terms.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="promo-section">
+      <div class="container">
+        <div class="section-meta">From The Community · Round 03</div>
+        <div class="section-head">
+          <h2 class="section-head__title" data-split>What members <em>actually</em> say.</h2>
+          <div class="section-head__aside">
+            <p>Real reviews from real members. Pulled from Google &amp; Instagram — names abbreviated for privacy.</p>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr; gap:1px; background:var(--hairline); border:1px solid var(--hairline);">
+          <div style="background:var(--ink); padding:32px; display:grid; grid-template-columns:1fr; gap:18px;" class="testimonial">
+            <div style="color:var(--fight); font-size:18px; letter-spacing:0.05em;">★★★★★</div>
+            <blockquote style="font-family:var(--font-editorial); font-style:italic; font-size:clamp(20px,2vw,26px); line-height:1.4; color:var(--bone); margin:0; max-width:900px;">"I walked in not knowing what I was doing. Within a month I had a coach who knew my name, a routine I actually looked forward to, and a community that asked where I was when I missed a week. This place isn't a gym, it's a craft."</blockquote>
+            <div style="font-family:var(--font-mono); font-size:10px; letter-spacing:0.24em; text-transform:uppercase; color:var(--fog);">— S.M. · Member since 2022</div>
+          </div>
+          <div style="background:var(--ink); padding:32px; display:grid; grid-template-columns:1fr; gap:18px;" class="testimonial">
+            <div style="color:var(--fight); font-size:18px; letter-spacing:0.05em;">★★★★★</div>
+            <blockquote style="font-family:var(--font-editorial); font-style:italic; font-size:clamp(20px,2vw,26px); line-height:1.4; color:var(--bone); margin:0; max-width:900px;">"My son does Little Warriors. The coaches are unreal with the kids — patient, demanding in the right ways, and they actually teach the technique. He's a different kid since he started. More confident, more focused, more himself."</blockquote>
+            <div style="font-family:var(--font-mono); font-size:10px; letter-spacing:0.24em; text-transform:uppercase; color:var(--fog);">— D.R. · Parent member</div>
+          </div>
+          <div style="background:var(--ink); padding:32px; display:grid; grid-template-columns:1fr; gap:18px;" class="testimonial">
+            <div style="color:var(--fight); font-size:18px; letter-spacing:0.05em;">★★★★★</div>
+            <blockquote style="font-family:var(--font-editorial); font-style:italic; font-size:clamp(20px,2vw,26px); line-height:1.4; color:var(--bone); margin:0; max-width:900px;">"I've trained in a lot of rooms. WEC has the rare combination of serious coaches who can actually teach, and zero of the ego nonsense you find at most boxing gyms. Everyone gets the same standard. That's why I keep coming back."</blockquote>
+            <div style="font-family:var(--font-mono); font-size:10px; letter-spacing:0.24em; text-transform:uppercase; color:var(--fog);">— J.B. · Former competitor, current member</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="promo-section" style="background:var(--carbon); border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline);">
+      <div class="container">
+        <div class="section-meta">Common Questions · Round 04</div>
+        <div class="section-head">
+          <h2 class="section-head__title" data-split>What's the <em>catch?</em></h2>
+          <div class="section-head__aside">
+            <p>There isn't one. But here's what people ask before they sign up — and the honest answers.</p>
+          </div>
+        </div>
+
+        <div class="faq">
+          <div class="faq__item">
+            <h3 class="faq__q">What does "<em>no catch</em>" actually mean?</h3>
+            <p class="faq__a">It means we don't ask for a credit card. You don't get auto-enrolled in anything. After your three days, you decide — sign up, walk away, or take more time to think. Whatever you want.</p>
+          </div>
+          <div class="faq__item">
+            <h3 class="faq__q">Do I need to bring anything?</h3>
+            <p class="faq__a">Athletic clothes, water bottle, towel. Hand wraps and gloves are provided on your first class — after that, we can recommend a starter set if you decide to stay.</p>
+          </div>
+          <div class="faq__item">
+            <h3 class="faq__q">What if I've never boxed before?</h3>
+            <p class="faq__a">Perfect. Most first-timers start in Fitness Boxing — no contact, no sparring, just the fundamentals taught at your pace. Your coach will walk you through every move.</p>
+          </div>
+          <div class="faq__item">
+            <h3 class="faq__q">Can I use my free pass on weekends?</h3>
+            <p class="faq__a">Yes — your three consecutive days can fall anywhere in the week. Walk in Friday, train Saturday, train Sunday, you're good.</p>
+          </div>
+          <div class="faq__item">
+            <h3 class="faq__q">What if I can't make it three days in a row?</h3>
+            <p class="faq__a">The pass is valid for seven days from sign-up, so you have flexibility. Reach out and we'll help you plan it around your schedule.</p>
+          </div>
+          <div class="faq__item">
+            <h3 class="faq__q">I'm out of town visiting. Can I use this?</h3>
+            <p class="faq__a">Sorry — the free pass is for new members in the Toronto area. But if you're in town short-term, our drop-in rate is friendly. Reach out and we'll sort you out.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA + secondary form -->
+    <section class="cta-strip">
+      <div class="container cta-strip__inner">
+        <div class="meta meta--prefix">Final Round</div>
+        <h2 class="cta-strip__headline">Still <em>here?</em><br/>Claim your pass.</h2>
+        <p class="cta-strip__sub">Three days. On us. The hardest part is walking through the door — we'll handle the rest.</p>
+        <div class="cta-strip__actions">
+          <a href="#promo-form" class="btn-primary btn-primary--lg">
+            Claim My 3 Days
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="tel:14166211234" class="btn-secondary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:14px;height:14px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+            Or Call 416 · 621 · 1234
+          </a>
+        </div>
+        <ul class="cta-strip__terms" aria-label="Offer terms">
+          <li>· New members only</li>
+          <li>· Group classes or open gym</li>
+          <li>· Valid 7 days from sign-up</li>
+          <li>· One per household</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Sticky mobile CTA -->
+  <a href="#promo-form" class="promo-sticky">
+    Claim 3 Days Free
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:12px;height:12px;"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+  </a>
+
+  <footer id="visit">
+    <div class="container">
+      <h2 class="footer__mega"><em>Excellence</em> Through<br/>Discipline.</h2>
+      <div class="footer__grid">
+        <div class="footer__col">
+          <h4>West End Athletic Club</h4>
+          <p>A heritage boxing and strength club in Toronto's west end. Members from every walk — trained champions and weekend warriors, ages 4 to 74.</p>
+          <p class="footer__brand">— Not your average Toronto boxing gym.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Visit</h4>
+          <ul>
+            <li>283 Bering Ave</li>
+            <li>Etobicoke, ON</li>
+            <li>M8Z 3A5</li>
+            <li><a href="tel:14166211234">416 · 621 · 1234</a></li>
+            <li><a href="mailto:info@westendac.com">info@westendac.com</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Hours</h4>
+          <ul>
+            <li>Mon — Thu &nbsp;·&nbsp; 6a — 9p</li>
+            <li>Friday &nbsp;·&nbsp; 6a — 8:30p</li>
+            <li>Saturday &nbsp;·&nbsp; 8a — 3p</li>
+            <li>Sunday &nbsp;·&nbsp; 9a — 2p</li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Follow</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">YouTube</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 West End Athletic Club · Est. Toronto</span>
+        <span>Site designed in the spirit of <em style="font-family:'Playfair Display';font-style:italic;color:var(--bone);">Excellence Through Discipline</em></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/bundled/lenis.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

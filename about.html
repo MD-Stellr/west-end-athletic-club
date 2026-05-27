@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0A0A0A" />
+  <title>The Club — West End Athletic Club</title>
+  <meta name="description" content="A heritage boxing and strength club in Toronto's west end. Est. 2015. Our mission, our philosophy, our facility, our coaches." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Big+Shoulders+Display:wght@700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div class="loader" id="loader" role="status" aria-label="Loading">
+    <div class="loader__bar">
+      <span class="meta meta--prefix">EST. 2015</span>
+      <span class="meta meta--prefix">TORONTO / CANADA</span>
+    </div>
+    <div class="loader__center">
+      <div class="loader__counter"><span id="counter">00</span><sup>%</sup></div>
+    </div>
+    <div class="loader__bar">
+      <span class="meta meta--prefix">WEC / VOL.IX</span>
+      <span class="meta meta--prefix">THE CLUB</span>
+    </div>
+    <div class="loader__brand">Not Your Average Toronto Boxing Gym</div>
+    <div class="loader__progress"><div class="loader__progress-fill"></div></div>
+  </div>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <a href="index.html" class="nav__logo" aria-label="West End Athletic Club">
+      <div class="nav__logo-mark">W</div>
+      <div class="nav__logo-text">
+        WEST END<span>Athletic Club · TO</span>
+      </div>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="about.html" class="nav__link">The Club</a>
+      <a href="classes.html" class="nav__link">Classes</a>
+      <a href="schedule.html" class="nav__link">Schedule</a>
+      <a href="memberships.html" class="nav__link">Memberships</a>
+      <a href="index.html#visit" class="nav__link">Visit</a>
+    </nav>
+    <div style="display:flex; align-items:center;">
+      <a href="promo.html" class="nav__cta">
+        3 Days Free
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <button class="nav__burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="about.html" class="mobile-menu__link"><em style="font-family:'Playfair Display';font-style:italic;color:#E63946;">The Club</em></a>
+    <a href="classes.html" class="mobile-menu__link">Classes</a>
+    <a href="schedule.html" class="mobile-menu__link">Schedule</a>
+    <a href="memberships.html" class="mobile-menu__link">Memberships</a>
+    <a href="promo.html" class="mobile-menu__link">3 Days Free</a>
+    <a href="index.html#visit" class="mobile-menu__link">Visit</a>
+  </div>
+
+  <main id="top">
+
+    <!-- PAGE HERO -->
+    <section class="page-hero" aria-labelledby="about-heading">
+      <div class="page-hero__media">
+        <img src="images/facility-main.jpg" alt="The ring at West End Athletic Club" />
+      </div>
+      <div class="page-hero__breadcrumbs">
+        <a href="index.html">Home</a><span>·</span><a href="about.html">The Club</a>
+      </div>
+      <div class="page-hero__container">
+        <div class="page-hero__meta">
+          <span class="meta meta--prefix">The Club · Vol. IX</span>
+          <span class="meta">Est. 2015 — Etobicoke</span>
+        </div>
+        <h1 class="page-hero__title" id="about-heading" data-split>Built on <em>brick</em>, leather, and decades of fight.</h1>
+        <p class="page-hero__sub">For ten years we've quietly built one of the most respected boxing and strength rooms in Toronto. No mirrors. No music gimmicks. Just the work, the people, and the standards we hold each other to.</p>
+      </div>
+    </section>
+
+    <!-- MISSION (full) -->
+    <section class="section mission" id="mission" aria-labelledby="mission-heading">
+      <div class="container">
+        <div class="section-meta">The Mission · Round 01</div>
+        <div class="mission__grid">
+          <h2 class="mission__quote" id="mission-heading" data-split>
+            We help you reach your goals and <em>true</em> potential — physically, mentally, emotionally — and create longevity in the gym and in life.
+          </h2>
+          <div class="mission__aside">
+            <p class="reveal">We are a community that cares for one another and champions each other's success. No egos. No image. No fake-it-til-you-make-it. Just the work, the hours, and the people beside you doing the same.</p>
+            <div class="mission__mantra reveal" data-delay="1">
+              <span>Keep It Simple</span>
+              <span>Master The Basics</span>
+              <span>Work Harder</span>
+              <span>Be Stronger</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PULL QUOTE -->
+    <div class="pull-quote">
+      <p>"We don't sell <em>workouts</em>. We sell the slow accumulation of discipline that turns regular people into the best version of themselves."</p>
+    </div>
+
+    <!-- VALUES — WE ARE -->
+    <section class="values" id="values" aria-labelledby="values-heading">
+      <div class="container">
+        <div class="section-meta">The Philosophy · Round 02</div>
+        <div class="values__intro">
+          <h2 class="values__title" id="values-heading" data-split>We <em>are…</em></h2>
+          <p style="color:var(--ash); font-size:17px; max-width:540px;">Five words. Each one earned. Each one chosen. This is the lens we hold every decision against — who we hire, how we coach, what we build, who we welcome.</p>
+        </div>
+
+        <div class="values__list">
+          <div class="value">
+            <div class="value__num">— 01</div>
+            <div class="value__word">Ambitious</div>
+            <p class="value__desc">We set high standards, push past limits, and keep growing — as athletes, teammates, and people. We don't settle. We level up.</p>
+          </div>
+          <div class="value">
+            <div class="value__num">— 02</div>
+            <div class="value__word">Approachable</div>
+            <p class="value__desc">Open, humble, easy to talk to. Everyone is welcome here, and we treat each other with respect and patience. No egos.</p>
+          </div>
+          <div class="value">
+            <div class="value__num">— 03</div>
+            <div class="value__word">Family Oriented</div>
+            <p class="value__desc">We treat this place like home. We look out for one another inside and outside the gym, and protect our culture of belonging.</p>
+          </div>
+          <div class="value">
+            <div class="value__num">— 04</div>
+            <div class="value__word">Committed</div>
+            <p class="value__desc">We show up on time, stay consistent, and follow through. Coaching, training, helping a teammate — we do what we say, every time.</p>
+          </div>
+          <div class="value">
+            <div class="value__num">— 05</div>
+            <div class="value__word">Authentic</div>
+            <p class="value__desc">Real people who bring our full selves to the gym. We lead with heart, not image — and we never fake who we are.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="section" aria-labelledby="story-heading">
+      <div class="container">
+        <div class="section-meta">The Story · Round 03</div>
+        <div class="section-head">
+          <h2 class="section-head__title" id="story-heading" data-split>A decade of <em>discipline.</em></h2>
+          <div class="section-head__aside">
+            <p>From a 2,000 sq ft room on Bering Avenue to one of Toronto's most decorated training facilities — built one round, one member, one championship banner at a time.</p>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr; gap:48px; margin-top:32px;">
+          <div style="display:grid; grid-template-columns:1fr; gap:48px;" class="story-grid">
+            <article style="border-top:1px solid var(--hairline); padding-top:24px;">
+              <div class="meta meta--prefix" style="margin-bottom:12px;">2015 / The Beginning</div>
+              <h3 style="font-family:var(--font-editorial); font-style:italic; font-weight:900; font-size:clamp(28px,3vw,40px); line-height:1.05; letter-spacing:-0.02em; color:var(--bone); margin:0 0 16px;">Open the door.</h3>
+              <p style="color:var(--ash); font-size:15px; line-height:1.75; max-width:520px;">Stevie Baily and a small group of coaches put a heavy bag on a hardwood floor in Etobicoke and started teaching anyone who walked in. No marketing. No glossy brochures. Just craft, taught honestly.</p>
+            </article>
+
+            <article style="border-top:1px solid var(--hairline); padding-top:24px;">
+              <div class="meta meta--prefix" style="margin-bottom:12px;">2018 / The Expansion</div>
+              <h3 style="font-family:var(--font-editorial); font-style:italic; font-weight:900; font-size:clamp(28px,3vw,40px); line-height:1.05; letter-spacing:-0.02em; color:var(--bone); margin:0 0 16px;">Add the floor.</h3>
+              <p style="color:var(--ash); font-size:15px; line-height:1.75; max-width:520px;">An Eleiko strength &amp; conditioning floor went in next to the bags. Miguel Valdez joined to lead S&amp;C. The room doubled. The standard didn't move.</p>
+            </article>
+
+            <article style="border-top:1px solid var(--hairline); padding-top:24px;">
+              <div class="meta meta--prefix" style="margin-bottom:12px;">2021 / The Youth Program</div>
+              <h3 style="font-family:var(--font-editorial); font-style:italic; font-weight:900; font-size:clamp(28px,3vw,40px); line-height:1.05; letter-spacing:-0.02em; color:var(--bone); margin:0 0 16px;">Build the next ten.</h3>
+              <p style="color:var(--ash); font-size:15px; line-height:1.75; max-width:520px;">Little Warriors® and Youth Boxing launched alongside our proprietary Boxing Band System®. Today, dozens of young athletes age 4-16 train weekly — some for sport, all for the life skills.</p>
+            </article>
+
+            <article style="border-top:1px solid var(--hairline); padding-top:24px;">
+              <div class="meta meta--prefix" style="margin-bottom:12px;">2024 / Today</div>
+              <h3 style="font-family:var(--font-editorial); font-style:italic; font-weight:900; font-size:clamp(28px,3vw,40px); line-height:1.05; letter-spacing:-0.02em; color:var(--bone); margin:0 0 16px;">10,000 sq ft.</h3>
+              <p style="color:var(--ash); font-size:15px; line-height:1.75; max-width:520px;">Cleto Reyes professional boxing equipment. Eleiko platforms. Hot-rock sauna. Smoothie &amp; coffee bar. Eight certified coaches. Hundreds of members from age 4 to 74. One standard: excellence through discipline.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FACILITY (full) -->
+    <section class="facility" id="facility" aria-labelledby="facility-heading">
+      <div class="facility__hero">
+        <img src="images/facility-main.jpg" alt="The West End ring with brick walls, championship posters, weight floor and Canadian flag" />
+        <div class="facility__overlay">
+          <div class="facility__overlay-top">
+            <span class="meta meta--prefix">The Facility · Round 04</span>
+            <span class="meta meta--prefix">283 Bering Ave / Etobicoke</span>
+          </div>
+          <div class="facility__overlay-bottom">
+            <h2 class="facility__sqft" id="facility-heading">10,000 sq ft<br/>of <em>awesomeness</em>.</h2>
+            <p class="facility__desc">A solid assortment of Cleto Reyes professional boxing equipment paired with a high-performance training space — state-of-the-art cardio, strength, sauna and a coffee bar.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="facility__amenities">
+        <div class="amenity">
+          <div class="amenity__num">— 01</div>
+          <div class="amenity__title">Cleto Reyes Professional</div>
+          <p class="amenity__desc">Heavy bags, speed bags, uppercut bags, wrecking balls — the equipment champions trust.</p>
+        </div>
+        <div class="amenity">
+          <div class="amenity__num">— 02</div>
+          <div class="amenity__title">Eleiko Strength Floor</div>
+          <p class="amenity__desc">State-of-the-art cardio, free weights, and a full strength &amp; conditioning rig.</p>
+        </div>
+        <div class="amenity">
+          <div class="amenity__num">— 03</div>
+          <div class="amenity__title">Hot-Rock Sauna</div>
+          <p class="amenity__desc">Traditional saunas, change rooms with day lockers, and full showers.</p>
+        </div>
+        <div class="amenity">
+          <div class="amenity__num">— 04</div>
+          <div class="amenity__title">Smoothie &amp; Coffee Bar</div>
+          <p class="amenity__desc">Refuel after the round. Built for the way our members actually train.</p>
+        </div>
+      </div>
+
+      <div class="facility__grid" aria-label="Inside the gym">
+        <figure><img src="images/f1.jpg" alt="" loading="lazy"/></figure>
+        <figure><img src="images/f3.jpg" alt="" loading="lazy"/></figure>
+        <figure><img src="images/f5.jpg" alt="" loading="lazy"/></figure>
+        <figure><img src="images/f6.jpg" alt="" loading="lazy"/></figure>
+        <figure><img src="images/f7.jpg" alt="" loading="lazy"/></figure>
+        <figure><img src="images/f8.jpg" alt="" loading="lazy"/></figure>
+        <figure><img src="images/f9.jpg" alt="" loading="lazy"/></figure>
+        <figure><img src="images/f10.jpg" alt="" loading="lazy"/></figure>
+        <figure><img src="images/f11.jpg" alt="" loading="lazy"/></figure>
+        <figure><img src="images/f12.jpg" alt="" loading="lazy"/></figure>
+        <figure><img src="images/f13.jpg" alt="" loading="lazy"/></figure>
+        <figure><img src="images/f14.jpg" alt="" loading="lazy"/></figure>
+        <figure><img src="images/f15.jpg" alt="" loading="lazy"/></figure>
+        <figure><img src="images/f16.jpg" alt="" loading="lazy"/></figure>
+        <figure><img src="images/f17.jpg" alt="" loading="lazy"/></figure>
+        <figure><img src="images/f18.jpg" alt="" loading="lazy"/></figure>
+        <figure><img src="images/f21.jpg" alt="" loading="lazy"/></figure>
+        <figure><img src="images/f22.jpg" alt="" loading="lazy"/></figure>
+      </div>
+    </section>
+
+    <!-- TEAM (full) -->
+    <section class="section team" id="team" aria-labelledby="team-heading">
+      <div class="container">
+        <div class="section-meta">The Corner · Round 05</div>
+        <div class="section-head">
+          <h2 class="section-head__title" id="team-heading" data-split>Driven. Certified. <em>Experienced.</em></h2>
+          <div class="section-head__aside">
+            <p>Hundreds of years of combined amateur and professional careers. Certified by AIBA, Boxing Canada, Boxing Ontario, NCCP, CSEP, ISSA, CanFitPro and WAKO.</p>
+          </div>
+        </div>
+
+        <div class="team__list">
+          <div class="coach">
+            <div class="coach__num">— 01</div>
+            <div>
+              <div class="coach__name">Stevie Baily</div>
+              <div class="coach__role">Head Coach · Boxing</div>
+            </div>
+            <div class="coach__role">Programming, technical development, fight team lead.</div>
+            <div class="coach__certs">AIBA · Boxing Canada · NCCP</div>
+          </div>
+          <div class="coach">
+            <div class="coach__num">— 02</div>
+            <div>
+              <div class="coach__name">Miguel Valdez</div>
+              <div class="coach__role">Strength &amp; Conditioning</div>
+            </div>
+            <div class="coach__role">Elite-athlete S&amp;C, periodization, sports performance.</div>
+            <div class="coach__certs">CSEP · ISSA · CanFitPro</div>
+          </div>
+          <div class="coach">
+            <div class="coach__num">— 03</div>
+            <div>
+              <div class="coach__name">Vinny Cappuccitti</div>
+              <div class="coach__role">Coach · Boxing &amp; Conditioning</div>
+            </div>
+            <div class="coach__role">Adult fundamentals, fitness boxing, technical drills.</div>
+            <div class="coach__certs">NCCP · Boxing Ontario</div>
+          </div>
+          <div class="coach">
+            <div class="coach__num">— 04</div>
+            <div>
+              <div class="coach__name">Michelle Sturino</div>
+              <div class="coach__role">Coach · Women's Program</div>
+            </div>
+            <div class="coach__role">Women's-only fitness &amp; strength, nutrition counsel.</div>
+            <div class="coach__certs">CanFitPro · CSEP</div>
+          </div>
+          <div class="coach">
+            <div class="coach__num">— 05</div>
+            <div>
+              <div class="coach__name">Misha Ideltchik</div>
+              <div class="coach__role">Coach · Boxing</div>
+            </div>
+            <div class="coach__role">Technical instruction, sparring development, mitt work.</div>
+            <div class="coach__certs">NCCP · Boxing Ontario</div>
+          </div>
+          <div class="coach">
+            <div class="coach__num">— 06</div>
+            <div>
+              <div class="coach__name">Jim Bzovey</div>
+              <div class="coach__role">Coach · Boxing</div>
+            </div>
+            <div class="coach__role">All-levels boxing, fundamentals through advanced.</div>
+            <div class="coach__certs">NCCP · Boxing Ontario</div>
+          </div>
+          <div class="coach">
+            <div class="coach__num">— 07</div>
+            <div>
+              <div class="coach__name">Remo DiCarlo</div>
+              <div class="coach__role">Coach · Boxing</div>
+            </div>
+            <div class="coach__role">Decades of ring craft. Old-school technique, modern delivery.</div>
+            <div class="coach__certs">NCCP · Boxing Ontario</div>
+          </div>
+          <div class="coach">
+            <div class="coach__num">— 08</div>
+            <div>
+              <div class="coach__name">Rob Roe</div>
+              <div class="coach__role">Coach · MMA &amp; Muay Thai</div>
+            </div>
+            <div class="coach__role">Striking, kickboxing, grappling fundamentals.</div>
+            <div class="coach__certs">WAKO · NCCP</div>
+          </div>
+        </div>
+
+        <div class="certs-marquee" aria-hidden="true">
+          <div class="meta meta--prefix" style="margin-bottom:16px;">Certifications</div>
+          <div class="certs-marquee__row">
+            <div class="certs-marquee__track">
+              <span class="cert">AIBA</span><span class="cert" style="color:var(--fight)">·</span>
+              <span class="cert">BOXING CANADA</span><span class="cert" style="color:var(--fight)">·</span>
+              <span class="cert">BOXING ONTARIO</span><span class="cert" style="color:var(--fight)">·</span>
+              <span class="cert">NCCP</span><span class="cert" style="color:var(--fight)">·</span>
+              <span class="cert">CSEP</span><span class="cert" style="color:var(--fight)">·</span>
+              <span class="cert">ISSA</span><span class="cert" style="color:var(--fight)">·</span>
+              <span class="cert">CANFITPRO</span><span class="cert" style="color:var(--fight)">·</span>
+              <span class="cert">WAKO</span><span class="cert" style="color:var(--fight)">·</span>
+              <span class="cert">AIBA</span><span class="cert" style="color:var(--fight)">·</span>
+              <span class="cert">BOXING CANADA</span><span class="cert" style="color:var(--fight)">·</span>
+              <span class="cert">BOXING ONTARIO</span><span class="cert" style="color:var(--fight)">·</span>
+              <span class="cert">NCCP</span><span class="cert" style="color:var(--fight)">·</span>
+              <span class="cert">CSEP</span><span class="cert" style="color:var(--fight)">·</span>
+              <span class="cert">ISSA</span><span class="cert" style="color:var(--fight)">·</span>
+              <span class="cert">CANFITPRO</span><span class="cert" style="color:var(--fight)">·</span>
+              <span class="cert">WAKO</span><span class="cert" style="color:var(--fight)">·</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-strip">
+      <div class="container cta-strip__inner">
+        <div class="meta meta--prefix">Step Inside</div>
+        <h2 class="cta-strip__headline">Come see it for <em>yourself.</em></h2>
+        <p class="cta-strip__sub">No pressure tour. Walk the floor, see the ring, ask anything. Or skip ahead — claim three free days on us.</p>
+        <div class="cta-strip__actions">
+          <a href="promo.html" class="btn-primary btn-primary--lg">
+            Claim 3 Days Free
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="schedule.html" class="btn-secondary">See the Schedule</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="visit">
+    <div class="container">
+      <h2 class="footer__mega"><em>Excellence</em> Through<br/>Discipline.</h2>
+
+      <div class="footer__grid">
+        <div class="footer__col">
+          <h4>West End Athletic Club</h4>
+          <p>A heritage boxing and strength club in Toronto's west end. Members from every walk — trained champions and weekend warriors, ages 4 to 74.</p>
+          <p class="footer__brand">— Not your average Toronto boxing gym.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Visit</h4>
+          <ul>
+            <li>283 Bering Ave</li>
+            <li>Etobicoke, ON</li>
+            <li>M8Z 3A5</li>
+            <li><a href="tel:14166211234">416 · 621 · 1234</a></li>
+            <li><a href="mailto:info@westendac.com">info@westendac.com</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Hours</h4>
+          <ul>
+            <li>Mon — Thu &nbsp;·&nbsp; 6a — 9p</li>
+            <li>Friday &nbsp;·&nbsp; 6a — 8:30p</li>
+            <li>Saturday &nbsp;·&nbsp; 8a — 3p</li>
+            <li>Sunday &nbsp;·&nbsp; 9a — 2p</li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Follow</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">YouTube</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>© 2026 West End Athletic Club · Est. Toronto</span>
+        <span>Site designed in the spirit of <em style="font-family:'Playfair Display';font-style:italic;color:var(--bone);">Excellence Through Discipline</em></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/bundled/lenis.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
