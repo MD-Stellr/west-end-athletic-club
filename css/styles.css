@@ -3031,8 +3031,8 @@ input, select, textarea { font-size: 16px; }
   .hero__actions { gap: 12px; width: 100%; }
   .hero__actions .btn-primary, .hero__actions .btn-secondary { flex: 1 1 100%; justify-content: center; min-height: 52px; padding: 16px 20px; }
 
-  /* Hero topbar — stack the two editorial prefixes so neither runs off-screen */
-  .hero__topbar { flex-direction: column; align-items: flex-start; gap: 6px; right: auto; padding-top: 64px; }
+  /* Hero topbar — align the editorial prefix flush with the headline's left edge */
+  .hero__topbar { flex-direction: column; align-items: flex-start; gap: 6px; left: 20px; right: auto; padding-top: 64px; }
   .hero__topbar .meta { font-size: 9px; letter-spacing: 0.18em; }
 
   /* Scroll cue — drop it to the very bottom so it clears the reviews badge */
