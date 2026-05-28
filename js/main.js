@@ -138,7 +138,9 @@
         merged.push(t);
       }
     }
-    el.innerHTML = merged.map(t => `<span class="word"><span>${t}</span></span>`).join(' ');
+    el.innerHTML = merged
+      .map(t => /^<br\s*\/?>$/i.test(t) ? '<br>' : `<span class="word"><span>${t}</span></span>`)
+      .join(' ');
   };
 
   /* ---------- KICK OFF GSAP ANIMATIONS ---------- */
