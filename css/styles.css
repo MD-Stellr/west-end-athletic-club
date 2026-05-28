@@ -355,7 +355,10 @@ body.is-loading main, body.is-loading footer, body.is-loading header { visibilit
   inset: 0;
   z-index: 0;
 }
-.hero > *:not(.hero__media) { position: relative; z-index: 1; }
+/* Lift in-flow content above the media layer. Excludes scroll cue + caption,
+   which are absolutely positioned — without these :not()s this rule's higher
+   specificity would force them back into flow and bloat the hero column. */
+.hero > *:not(.hero__media):not(.hero__scroll):not(.hero__caption) { position: relative; z-index: 1; }
 .hero__media img {
   width: 100%;
   height: 110%;
@@ -387,8 +390,8 @@ body.is-loading main, body.is-loading footer, body.is-loading header { visibilit
 .hero__headline {
   font-family: var(--font-display);
   font-weight: 900;
-  font-size: clamp(56px, 12vw, 184px);
-  line-height: 0.86;
+  font-size: clamp(48px, 7.2vw, 118px);
+  line-height: 0.92;
   letter-spacing: -0.025em;
   color: var(--bone);
   max-width: 1400px;
@@ -399,7 +402,10 @@ body.is-loading main, body.is-loading footer, body.is-loading header { visibilit
   display: inline-block;
   overflow: hidden;
   vertical-align: top;
-  padding-bottom: 0.05em;
+  /* Expand the reveal-mask box downward so descenders (g, y) aren't clipped,
+     then pull the line back up so vertical rhythm is unchanged. */
+  padding-bottom: 0.16em;
+  margin-bottom: -0.16em;
 }
 .hero__headline .word span {
   display: inline-block;
