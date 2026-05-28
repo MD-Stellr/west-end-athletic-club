@@ -18,7 +18,9 @@
 
   --font-display: 'Big Shoulders Display', 'Anton', sans-serif;
   --font-display-alt: 'Anton', sans-serif;
-  --font-editorial: 'Playfair Display', 'Tiempos Headline', serif;
+  /* "Editorial" was italic Playfair — retired site-wide. Now maps to the
+     display font so the red accents keep their weight/color, minus the italic. */
+  --font-editorial: 'Big Shoulders Display', 'Anton', sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
@@ -378,8 +380,10 @@ body.is-loading main, body.is-loading footer, body.is-loading header { visibilit
 .hero__topbar {
   position: absolute;
   top: clamp(24px, 5vw, 48px);
-  left: clamp(24px, 5vw, 48px);
-  right: clamp(24px, 5vw, 48px);
+  /* This element is effectively in-flow (the .hero > * rule forces relative),
+     so it already sits at the headline's left edge — no horizontal offset. */
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1015,31 +1019,56 @@ body.is-loading main, body.is-loading footer, body.is-loading header { visibilit
   padding: clamp(40px, 5vw, 72px) clamp(20px, 5vw, 48px);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 6px;
+  grid-auto-rows: clamp(120px, 32vw, 170px);
+  grid-auto-flow: dense;
+  gap: 8px;
 }
 @media (min-width: 768px) {
-  .facility__grid { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .facility__grid { grid-template-columns: repeat(4, 1fr); grid-auto-rows: clamp(150px, 16vw, 190px); gap: 10px; }
+  /* Mosaic accents — a feature tile, a wide tile and a tall tile per cluster.
+     grid-auto-flow: dense backfills the gaps for a tight collage. */
+  .facility__grid figure:nth-child(8n + 1) { grid-column: span 2; grid-row: span 2; }
+  .facility__grid figure:nth-child(8n + 5) { grid-column: span 2; }
+  .facility__grid figure:nth-child(8n + 4) { grid-row: span 2; }
 }
 @media (min-width: 1280px) {
-  .facility__grid { grid-template-columns: repeat(6, 1fr); }
+  .facility__grid { grid-auto-rows: 210px; }
 }
 .facility__grid figure {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 1;
+  margin: 0;
   background: var(--carbon);
+  cursor: zoom-in;
 }
 .facility__grid img {
   width: 100%; height: 100%;
   object-fit: cover;
-  filter: brightness(0.85);
+  filter: brightness(0.82);
   transition: filter 0.5s ease, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   will-change: transform;
 }
 .facility__grid figure:hover img {
   filter: brightness(1);
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
+/* Enlarge affordance on hover */
+.facility__grid figure::after {
+  content: "";
+  position: absolute;
+  top: 10px; right: 10px;
+  width: 30px; height: 30px;
+  background:
+    linear-gradient(var(--bone), var(--bone)) center/13px 2px no-repeat,
+    linear-gradient(var(--bone), var(--bone)) center/2px 13px no-repeat,
+    rgba(10, 10, 10, 0.55);
+  border: 1px solid var(--hairline-strong);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+.facility__grid figure:hover::after { opacity: 1; transform: scale(1); }
 
 .facility__amenities {
   display: grid;
@@ -1927,7 +1956,10 @@ footer {
   inset: 0;
   z-index: 0;
 }
-.page-hero > *:not(.page-hero__media) { position: relative; z-index: 1; }
+/* Lift in-flow content above the media. Excludes the breadcrumbs, which are
+   absolutely positioned — without this :not() the rule's higher specificity
+   forces them into flow, dropping them behind the title. */
+.page-hero > *:not(.page-hero__media):not(.page-hero__breadcrumbs) { position: relative; z-index: 1; }
 .page-hero__media img {
   width: 100%;
   height: 100%;
@@ -3021,8 +3053,11 @@ input, select, textarea { font-size: 16px; }
 @media (max-width: 640px) {
   /* Display headline scaling — pull max-bounds down so cropping disappears.
      The headline em (italic Playfair) renders wide; cap at viewport-safe sizes. */
-  .hero__headline { font-size: clamp(32px, 9vw, 44px); letter-spacing: -0.015em; line-height: 0.95; max-width: 100%; text-wrap: balance; overflow-wrap: break-word; }
+  .hero__headline { font-size: clamp(44px, 14vw, 64px); letter-spacing: -0.02em; line-height: 0.94; max-width: 100%; overflow-wrap: break-word; }
   .hero__headline .word { overflow: visible; }
+  /* Let the big headline flow/wrap naturally on phones — the forced break after
+     "Average" would otherwise lock three words onto one too-wide line. */
+  .hero__headline br { display: none; }
   .section-nav__title { font-size: clamp(28px, 8vw, 40px); line-height: 0.96; max-width: 100%; text-wrap: balance; }
   .cta-strip__headline { font-size: clamp(32px, 9vw, 44px); line-height: 0.96; }
   .page-hero__title { font-size: clamp(36px, 10vw, 48px); line-height: 0.95; max-width: 100%; }
@@ -3038,7 +3073,7 @@ input, select, textarea { font-size: 16px; }
   .hero__actions .btn-primary, .hero__actions .btn-secondary { flex: 1 1 100%; justify-content: center; min-height: 52px; padding: 16px 20px; }
 
   /* Hero topbar — align the editorial prefix flush with the headline's left edge */
-  .hero__topbar { flex-direction: column; align-items: flex-start; gap: 6px; left: 20px; right: auto; padding-top: 64px; }
+  .hero__topbar { flex-direction: column; align-items: flex-start; gap: 6px; left: 0; right: 0; padding-top: 64px; }
   .hero__topbar .meta { font-size: 9px; letter-spacing: 0.18em; }
 
   /* Scroll cue — drop it to the very bottom so it clears the reviews badge */
@@ -3119,7 +3154,7 @@ input, select, textarea { font-size: 16px; }
 
 /* Very small phones (≤ 380px) — extra safety */
 @media (max-width: 380px) {
-  .hero__headline { font-size: 34px; }
+  .hero__headline { font-size: 42px; }
   .page-hero__title { font-size: 34px; }
   .section-nav__title { font-size: 30px; }
   .cta-strip__headline { font-size: 30px; }
@@ -3176,4 +3211,80 @@ input, select, textarea { font-size: 16px; }
   font-family: var(--font-display) !important;
   font-style: normal !important;
   color: var(--fight) !important;
+}
+
+/* =====================================================================
+   NO ITALICS — site-wide. Kill every italic slant (Playfair retired).
+   Red accent colors are kept (color is untouched here).
+   ===================================================================== */
+*, *::before, *::after { font-style: normal !important; }
+
+/* =====================================================================
+   LIGHTBOX — click-to-enlarge for the facility gallery
+   ===================================================================== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(16px, 5vw, 64px);
+  background: rgba(8, 8, 8, 0.95);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+.lightbox.is-open { opacity: 1; visibility: visible; }
+.lightbox__img {
+  max-width: 92vw;
+  max-height: 86vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border: 1px solid var(--hairline-strong);
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.7);
+  transform: scale(0.96);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.lightbox.is-open .lightbox__img { transform: scale(1); }
+.lightbox__count {
+  position: absolute;
+  top: clamp(18px, 3vw, 30px);
+  left: clamp(18px, 4vw, 40px);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  color: var(--ash);
+}
+.lightbox button {
+  position: absolute;
+  background: rgba(20, 20, 20, 0.5);
+  border: 1px solid var(--hairline-strong);
+  color: var(--bone);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+.lightbox button:hover { background: var(--fight); border-color: var(--fight); }
+.lightbox__close {
+  top: clamp(14px, 3vw, 28px);
+  right: clamp(14px, 4vw, 36px);
+  width: 48px; height: 48px;
+  font-size: 26px; line-height: 1;
+}
+.lightbox__nav {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px; height: 52px;
+  font-size: 30px; line-height: 1;
+}
+.lightbox__prev { left: clamp(10px, 2.5vw, 32px); }
+.lightbox__next { right: clamp(10px, 2.5vw, 32px); }
+@media (max-width: 640px) {
+  .lightbox__nav { width: 44px; height: 44px; bottom: 16px; top: auto; transform: none; }
+  .lightbox__prev { left: 16px; }
+  .lightbox__next { right: 16px; }
 }

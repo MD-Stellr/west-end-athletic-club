@@ -347,4 +347,64 @@
     if (lenis) lenis.scrollTo(target, { offset: -60, duration: 1.4 });
     else target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
+
+  /* ---------- LIGHTBOX (facility gallery) ---------- */
+  (function initLightbox() {
+    const imgs = Array.from(document.querySelectorAll('.facility__grid img'));
+    if (!imgs.length) return;
+
+    const srcs = imgs.map(img => img.currentSrc || img.src);
+    const lb = document.createElement('div');
+    lb.className = 'lightbox';
+    lb.setAttribute('aria-hidden', 'true');
+    lb.setAttribute('role', 'dialog');
+    lb.setAttribute('aria-label', 'Image viewer');
+    lb.innerHTML =
+      '<span class="lightbox__count"></span>' +
+      '<button class="lightbox__close" aria-label="Close (Esc)">&times;</button>' +
+      '<button class="lightbox__nav lightbox__prev" aria-label="Previous">&#8249;</button>' +
+      '<img class="lightbox__img" alt="">' +
+      '<button class="lightbox__nav lightbox__next" aria-label="Next">&#8250;</button>';
+    document.body.appendChild(lb);
+
+    const lbImg = lb.querySelector('.lightbox__img');
+    const lbCount = lb.querySelector('.lightbox__count');
+    let idx = 0;
+
+    const render = () => {
+      lbImg.src = srcs[idx];
+      lbCount.textContent = (idx + 1) + ' / ' + srcs.length;
+    };
+    const open = i => {
+      idx = i;
+      render();
+      lb.classList.add('is-open');
+      lb.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      if (lenis) lenis.stop();
+    };
+    const close = () => {
+      lb.classList.remove('is-open');
+      lb.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (lenis) lenis.start();
+    };
+    const step = d => { idx = (idx + d + srcs.length) % srcs.length; render(); };
+
+    imgs.forEach((img, i) => {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', () => open(i));
+    });
+    lb.addEventListener('click', e => {
+      if (e.target === lb || e.target.classList.contains('lightbox__close')) close();
+    });
+    lb.querySelector('.lightbox__prev').addEventListener('click', e => { e.stopPropagation(); step(-1); });
+    lb.querySelector('.lightbox__next').addEventListener('click', e => { e.stopPropagation(); step(1); });
+    window.addEventListener('keydown', e => {
+      if (!lb.classList.contains('is-open')) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowLeft') step(-1);
+      else if (e.key === 'ArrowRight') step(1);
+    });
+  })();
 })();
