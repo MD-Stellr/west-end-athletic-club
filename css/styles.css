@@ -2234,7 +2234,6 @@ footer {
 }
 .class-block--boxing { border-left-color: var(--fight); }
 .class-block--sc { border-left-color: #D4B400; }
-.class-block--muay { border-left-color: #2E5C8A; }
 .class-block--mma { border-left-color: #6B6B6B; }
 .class-block--sparring { border-left-color: var(--bone); }
 .class-block--open { border-left-color: rgba(245,245,240,0.3); }
