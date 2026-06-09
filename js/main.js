@@ -407,4 +407,107 @@
       else if (e.key === 'ArrowRight') step(1);
     });
   })();
+
+  /* ---------- PROMO MODAL ("3 Days Free" lead capture) ---------- */
+  (function initPromoModal() {
+    // Don't show on the promo page itself, or if already seen this session.
+    if (/promo\.html$/i.test(location.pathname)) return;
+    if (sessionStorage.getItem('wec_promo_seen')) return;
+
+    const page = location.pathname.split('/').pop() || 'index.html';
+    const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>';
+
+    const m = document.createElement('div');
+    m.className = 'promo-modal';
+    m.id = 'promoModal';
+    m.setAttribute('role', 'dialog');
+    m.setAttribute('aria-modal', 'true');
+    m.setAttribute('aria-labelledby', 'promoModalTitle');
+    m.setAttribute('aria-hidden', 'true');
+    m.innerHTML =
+      '<div class="promo-modal__card">' +
+        '<button class="promo-modal__close" type="button" aria-label="Close">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg>' +
+        '</button>' +
+        '<div class="promo-modal__media" aria-hidden="true">' +
+          '<img src="images/f5.jpg" alt="">' +
+          '<span class="promo-modal__media-tag">West End<span>Est. 2015 · Etobicoke</span></span>' +
+        '</div>' +
+        '<div class="promo-modal__body">' +
+          '<span class="promo-modal__eyebrow">New members · Limited</span>' +
+          '<h2 class="promo-modal__title" id="promoModalTitle">3 Days <span>Free.</span></h2>' +
+          '<p class="promo-modal__sub">Every class, the bag room, open gym — on us. No card on file, no catch. Just show up and train.</p>' +
+          '<form class="promo-form" novalidate>' +
+            '<label>Full name<input type="text" name="name" autocomplete="name" placeholder="Your name" required></label>' +
+            '<label>Email<input type="email" name="email" autocomplete="email" placeholder="you@email.com" required></label>' +
+            '<label>Phone<input type="tel" name="phone" autocomplete="tel" placeholder="(416) 000-0000" required></label>' +
+            '<input type="hidden" name="source" value="3 Days Free Popup">' +
+            '<input type="hidden" name="page" value="' + page + '">' +
+            '<button class="btn-primary" type="submit">Claim My 3 Days' + arrow + '</button>' +
+            '<p class="promo-form__fine">No commitment. We’ll text you to lock in your first session.</p>' +
+          '</form>' +
+          '<div class="promo-modal__success" hidden>' +
+            '<span class="promo-modal__success-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg></span>' +
+            '<h3>You’re in.</h3>' +
+            '<p>We’ll reach out shortly to book your first session. See you in the gym.</p>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    document.body.appendChild(m);
+
+    const card = m.querySelector('.promo-modal__card');
+    const closeBtn = m.querySelector('.promo-modal__close');
+    const form = m.querySelector('.promo-form');
+    const success = m.querySelector('.promo-modal__success');
+    let shown = false;
+    let lastFocus = null;
+
+    const open = () => {
+      if (shown) return;
+      shown = true;
+      sessionStorage.setItem('wec_promo_seen', '1');
+      lastFocus = document.activeElement;
+      m.classList.add('is-open');
+      m.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      if (lenis) lenis.stop();
+      setTimeout(() => { const f = m.querySelector('input'); if (f) f.focus(); }, 360);
+    };
+    const close = () => {
+      m.classList.remove('is-open');
+      m.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (lenis) lenis.start();
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    };
+
+    closeBtn.addEventListener('click', close);
+    m.addEventListener('click', e => { if (e.target === m) close(); });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && m.classList.contains('is-open')) close();
+    });
+    // Simple focus trap
+    m.addEventListener('keydown', e => {
+      if (e.key !== 'Tab' || !m.classList.contains('is-open')) return;
+      const f = Array.from(m.querySelectorAll('button, input, a[href]'))
+        .filter(el => !el.disabled && el.offsetParent !== null);
+      if (!f.length) return;
+      const first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      // TODO: wire to GHL endpoint. Hidden fields source/page are ready for routing.
+      form.hidden = true;
+      success.hidden = false;
+    });
+
+    // Triggers: 10s dwell timer + exit-intent (whichever comes first).
+    const timer = setTimeout(open, 10000);
+    const onExitIntent = e => { if (e.clientY <= 0) { clearTimeout(timer); open(); } };
+    document.addEventListener('mouseleave', onExitIntent);
+  })();
 })();
