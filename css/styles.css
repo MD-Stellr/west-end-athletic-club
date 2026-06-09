@@ -1903,10 +1903,10 @@ footer {
   flex-wrap: wrap;
   justify-content: center;
   font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.22em;
+  font-size: 11px;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--fog);
+  color: var(--ash);
 }
 
 .btn-primary--lg {
@@ -3061,7 +3061,7 @@ input, select, textarea { font-size: 16px; }
   .cta-strip { padding: clamp(64px, 14vw, 96px) 20px; }
   .cta-strip__actions { width: 100%; }
   .cta-strip__actions .btn-primary, .cta-strip__actions .btn-secondary, .cta-strip__actions .btn-primary--lg { flex: 1 1 100%; justify-content: center; min-height: 52px; }
-  .cta-strip__terms { gap: 14px; font-size: 9px; }
+  .cta-strip__terms { gap: 14px; font-size: 11px; }
 
   /* Page hero — drop height so it doesn't dwarf the content */
   .page-hero { min-height: 0; padding: clamp(120px, 24vw, 160px) 20px clamp(56px, 10vw, 80px); }
