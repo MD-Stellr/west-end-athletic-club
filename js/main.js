@@ -185,7 +185,7 @@
 
     /* Hero image parallax */
     if (!prefersReducedMotion) {
-      gsap.to('.hero__media img', {
+      gsap.to('.hero__media img, .hero__video', {
         yPercent: 12,
         ease: 'none',
         scrollTrigger: {
@@ -514,7 +514,7 @@
   /* ---------- PAGE-HERO BACKGROUND VIDEO (inner pages) ---------- */
   (function initHeroVideo() {
     if (prefersReducedMotion) return; // CSS already hides it; don't fetch the file
-    document.querySelectorAll('.page-hero__video').forEach(video => {
+    document.querySelectorAll('.page-hero__video, .hero__video').forEach(video => {
       const reveal = () => video.classList.add('is-ready');
       if (video.readyState >= 3) reveal();
       else video.addEventListener('canplay', reveal, { once: true });
