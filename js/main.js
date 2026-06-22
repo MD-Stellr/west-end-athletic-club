@@ -511,6 +511,19 @@
     document.addEventListener('mouseleave', onExitIntent);
   })();
 
+  /* ---------- PAGE-HERO BACKGROUND VIDEO (inner pages) ---------- */
+  (function initHeroVideo() {
+    if (prefersReducedMotion) return; // CSS already hides it; don't fetch the file
+    document.querySelectorAll('.page-hero__video').forEach(video => {
+      const reveal = () => video.classList.add('is-ready');
+      if (video.readyState >= 3) reveal();
+      else video.addEventListener('canplay', reveal, { once: true });
+      // Nudge autoplay for browsers that defer muted-inline playback
+      const p = video.play();
+      if (p && p.catch) p.catch(() => {});
+    });
+  })();
+
   /* ---------- VSL PLAYER (promo.html video sales letter) ---------- */
   (function initVSL() {
     const video = document.getElementById('vslVideo');
