@@ -63,43 +63,118 @@
 
   <main id="top">
 
-    <!-- HERO + FORM ABOVE FOLD -->
-    <section class="promo-hero" aria-labelledby="promo-heading">
-      <div class="promo-hero__media">
+    <!-- VSL HERO — video-led above the fold -->
+    <section class="vsl-hero" aria-labelledby="promo-heading">
+      <div class="vsl-hero__bg">
         <img src="images/f1.jpg" alt="" />
       </div>
 
-      <div class="promo-hero__inner">
-        <!-- LEFT: offer copy -->
-        <div class="promo-hero__content">
-          <span class="promo-hero__badge">
-            Limited — New Members Only
-          </span>
-          <h1 class="promo-hero__title" id="promo-heading">
-            3 Days <em>Free.</em> No catch.
-          </h1>
-          <p class="promo-hero__sub">
-            Three full days inside our 10,000 sq ft west-end club. Every group class, the bag room, the Eleiko platform, the sauna — all in. No card on file, no commitment, no follow-up sales calls.
-          </p>
+      <div class="vsl-hero__inner">
+        <span class="vsl-hero__badge">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          Watch — 34 Seconds · New Members
+        </span>
 
-          <div class="promo-hero__trust">
-            <div class="promo-hero__trust-stat">
-              <div class="promo-hero__trust-num"><em>2015</em></div>
-              <div class="promo-hero__trust-label">Established · Toronto</div>
-            </div>
-            <div class="promo-hero__trust-stat">
-              <div class="promo-hero__trust-num">10,000</div>
-              <div class="promo-hero__trust-label">Sq Ft Facility</div>
-            </div>
-            <div class="promo-hero__trust-stat">
-              <div class="promo-hero__trust-num">8+</div>
-              <div class="promo-hero__trust-label">Certified Coaches</div>
-            </div>
-            <div class="promo-hero__trust-stat">
-              <div class="promo-hero__trust-num">40+</div>
-              <div class="promo-hero__trust-label">Classes / Week</div>
+        <h1 class="vsl-hero__title" id="promo-heading">
+          3 Days <em>Free.</em> No catch.
+        </h1>
+
+        <p class="vsl-hero__sub">
+          What if it was never about willpower? Press play and hear why West End isn't your average Toronto boxing gym — then claim three free days on us. No card, no commitment, no sales calls.
+        </p>
+
+        <!-- VIDEO SALES LETTER -->
+        <div class="vsl" id="vsl">
+          <div class="vsl__frame">
+            <video
+              class="vsl__video"
+              id="vslVideo"
+              playsinline
+              preload="metadata"
+              poster="media/vsl-poster.jpg"
+            >
+              <source src="media/vsl.mp4" type="video/mp4" />
+            </video>
+
+            <!-- Idle / play overlay -->
+            <button class="vsl__cover" id="vslCover" type="button" aria-label="Play video with sound">
+              <span class="vsl__play">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="vsl__cover-meta">
+                <span class="vsl__cover-label">Why West End is different</span>
+                <span class="vsl__cover-time">0:34 · Tap to play with sound</span>
+              </span>
+            </button>
+
+            <span class="vsl__tag">Inside West End · Est. 2015</span>
+
+            <!-- Ended / CTA overlay -->
+            <div class="vsl__end" id="vslEnd">
+              <p class="vsl__end-kicker">Ready when you are</p>
+              <h3 class="vsl__end-title">Your first <em>3 days</em> are on us.</h3>
+              <div class="vsl__end-actions">
+                <a href="#promo-form" class="btn-primary">
+                  Claim My 3 Days Free
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                </a>
+                <button type="button" class="vsl__replay" id="vslReplay">↺ Replay</button>
+              </div>
             </div>
           </div>
+        </div>
+
+        <div class="vsl-hero__cta">
+          <div class="vsl-hero__cta-row">
+            <a href="#promo-form" class="btn-primary btn-primary--lg">
+              Claim My 3 Days Free
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+            <a href="tel:14166211234" class="btn-secondary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:14px;height:14px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+              Or Call 416 · 621 · 1234
+            </a>
+          </div>
+          <div class="vsl-hero__trustline">
+            <span class="stars">★★★★★</span>
+            <span>4.9 · Google</span>
+            <span class="dot">·</span>
+            <span>No card required</span>
+            <span class="dot">·</span>
+            <span>Pass texted in 5 min</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLAIM — value recap + lead form -->
+    <section class="claim" aria-labelledby="claim-heading">
+      <div class="claim__inner">
+        <!-- LEFT: recap + reassurance -->
+        <div>
+          <div class="meta meta--prefix" style="margin-bottom:16px;">Claim Your Pass</div>
+          <h2 class="claim__title" id="claim-heading">Three days. <em>Everything.</em> Then you decide.</h2>
+          <p class="claim__lead">
+            Three full days inside our 10,000 sq ft west-end club — every group class, the bag room, the Eleiko platform, the sauna. Enter your details and your pass lands by text within five minutes.
+          </p>
+          <ul class="claim__list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg>
+              No credit card — nothing on file, ever
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg>
+              No auto-enrollment and no sales calls
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg>
+              All classes, all equipment, full sauna &amp; locker room
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg>
+              New members only · One per household · Valid 7 days
+            </li>
+          </ul>
         </div>
 
         <!-- RIGHT: lead form -->
@@ -201,27 +276,6 @@
       </div>
     </section>
 
-    <!-- WHAT'S INCLUDED -->
-    <section class="promo-included">
-      <div class="promo-section">
-        <div class="promo-included__grid">
-          <div>
-            <div class="meta meta--prefix" style="margin-bottom:16px;">What's Inside Your Pass</div>
-            <h2 class="promo-included__title">Three days. <em>Everything.</em></h2>
-            <p style="color:var(--ash); font-size:16px; line-height:1.75; max-width:480px;">Your free pass unlocks the full club — every group class on the schedule, every piece of equipment, every coach on the floor. No tiered access. No upgrades upsold mid-workout.</p>
-          </div>
-          <ul>
-            <li><span><b>Three Consecutive Days</b>Use them in a row, starting whenever you book your first class.</span></li>
-            <li><span><b>All Group Classes</b>Fitness Boxing, Technical, Strength &amp; Conditioning, MMA — your pick.</span></li>
-            <li><span><b>Open Gym Included</b>Bags, ring, weights, machines — whenever the floor is open.</span></li>
-            <li><span><b>Sauna &amp; Locker Room</b>Hot-rock sauna, change rooms, day lockers, full showers.</span></li>
-            <li><span><b>One-Time Purchase</b>New members only. One pass per household. Valid 7 days after sign-up.</span></li>
-            <li><span><b>Zero Pressure</b>No sales pitch when you walk in. Try it. Decide afterward. On your terms.</span></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
     <!-- TESTIMONIALS -->
     <section class="promo-section">
       <div class="container">
@@ -237,11 +291,6 @@
             <div style="color:var(--fight); font-size:18px; letter-spacing:0.05em;">★★★★★</div>
             <blockquote style="font-family:var(--font-editorial); font-style:italic; font-size:clamp(20px,2vw,26px); line-height:1.4; color:var(--bone); margin:0; max-width:900px;">"I walked in not knowing what I was doing. Within a month I had a coach who knew my name, a routine I actually looked forward to, and a community that asked where I was when I missed a week. This place isn't a gym, it's a craft."</blockquote>
             <div style="font-family:var(--font-mono); font-size:10px; letter-spacing:0.24em; text-transform:uppercase; color:var(--fog);">— S.M. · Member since 2022</div>
-          </div>
-          <div style="background:var(--ink); padding:32px; display:grid; grid-template-columns:1fr; gap:18px;" class="testimonial">
-            <div style="color:var(--fight); font-size:18px; letter-spacing:0.05em;">★★★★★</div>
-            <blockquote style="font-family:var(--font-editorial); font-style:italic; font-size:clamp(20px,2vw,26px); line-height:1.4; color:var(--bone); margin:0; max-width:900px;">"My son does Little Warriors. The coaches are unreal with the kids — patient, demanding in the right ways, and they actually teach the technique. He's a different kid since he started. More confident, more focused, more himself."</blockquote>
-            <div style="font-family:var(--font-mono); font-size:10px; letter-spacing:0.24em; text-transform:uppercase; color:var(--fog);">— D.R. · Parent member</div>
           </div>
           <div style="background:var(--ink); padding:32px; display:grid; grid-template-columns:1fr; gap:18px;" class="testimonial">
             <div style="color:var(--fight); font-size:18px; letter-spacing:0.05em;">★★★★★</div>
@@ -274,18 +323,6 @@
           <div class="faq__item">
             <h3 class="faq__q">What if I've never boxed before?</h3>
             <p class="faq__a">Perfect. Most first-timers start in Fitness Boxing — no contact, no sparring, just the fundamentals taught at your pace. Your coach will walk you through every move.</p>
-          </div>
-          <div class="faq__item">
-            <h3 class="faq__q">Can I use my free pass on weekends?</h3>
-            <p class="faq__a">Yes — your three consecutive days can fall anywhere in the week. Walk in Friday, train Saturday, train Sunday, you're good.</p>
-          </div>
-          <div class="faq__item">
-            <h3 class="faq__q">What if I can't make it three days in a row?</h3>
-            <p class="faq__a">The pass is valid for seven days from sign-up, so you have flexibility. Reach out and we'll help you plan it around your schedule.</p>
-          </div>
-          <div class="faq__item">
-            <h3 class="faq__q">I'm out of town visiting. Can I use this?</h3>
-            <p class="faq__a">Sorry — the free pass is for new members in the Toronto area. But if you're in town short-term, our drop-in rate is friendly. Reach out and we'll sort you out.</p>
           </div>
         </div>
       </div>

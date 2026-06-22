@@ -510,4 +510,35 @@
     const onExitIntent = e => { if (e.clientY <= 0) { clearTimeout(timer); open(); } };
     document.addEventListener('mouseleave', onExitIntent);
   })();
+
+  /* ---------- VSL PLAYER (promo.html video sales letter) ---------- */
+  (function initVSL() {
+    const video = document.getElementById('vslVideo');
+    if (!video) return;
+    const frame = video.closest('.vsl__frame');
+    const cover = document.getElementById('vslCover');
+    const replay = document.getElementById('vslReplay');
+
+    const play = () => {
+      frame.classList.remove('is-ended');
+      frame.classList.add('is-playing');
+      video.controls = true;
+      video.muted = false;
+      try { video.currentTime = 0; } catch (_) {}
+      const p = video.play();
+      // If sound-on autoplay is blocked, fall back to muted playback.
+      if (p && p.catch) {
+        p.catch(() => { video.muted = true; video.play().catch(() => {}); });
+      }
+    };
+
+    cover.addEventListener('click', play);
+    if (replay) replay.addEventListener('click', play);
+
+    video.addEventListener('ended', () => {
+      video.controls = false;
+      frame.classList.remove('is-playing');
+      frame.classList.add('is-ended');
+    });
+  })();
 })();
