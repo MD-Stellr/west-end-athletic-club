@@ -202,7 +202,7 @@
           <h2 class="lead-form__title" id="form-title">
             Claim your <em>free pass.</em>
           </h2>
-          <p class="lead-form__lead">Three fields, ten seconds. Pass arrives by text within 5 minutes.</p>
+          <p class="lead-form__lead">Takes 20 seconds. Your pass arrives by text within 5 minutes.</p>
 
           <div class="lead-form__row">
             <div class="lead-form__field">
@@ -225,20 +225,28 @@
             </div>
           </div>
 
-          <details class="lead-form__optional">
-            <summary>Do you have boxing experience? <span>(optional)</span></summary>
-            <div class="lead-form__row" style="margin-top:14px;">
-              <div class="lead-form__field">
-                <label class="lead-form__label" for="boxing_experience">Boxing Experience</label>
-                <select class="lead-form__select" id="boxing_experience" name="boxing_experience">
-                  <option value="">Prefer not to say</option>
-                  <option value="none">Complete beginner — never boxed</option>
-                  <option value="some">Some experience</option>
-                  <option value="experienced">Experienced — I've trained or competed</option>
-                </select>
-              </div>
+          <div class="lead-form__row">
+            <div class="lead-form__field">
+              <label class="lead-form__label" for="boxing_experience">Do you have boxing experience?</label>
+              <select class="lead-form__select" id="boxing_experience" name="boxing_experience" required>
+                <option value="" disabled selected>Select one…</option>
+                <option value="none">Complete beginner — never boxed</option>
+                <option value="some">Some experience</option>
+                <option value="experienced">Experienced — I've trained or competed</option>
+              </select>
             </div>
-          </details>
+          </div>
+
+          <div class="lead-form__row">
+            <div class="lead-form__field">
+              <label class="lead-form__label" for="has_equipment">Do you have your own gear?</label>
+              <select class="lead-form__select" id="has_equipment" name="has_equipment" required>
+                <option value="" disabled selected>Select one…</option>
+                <option value="yes">Yes — I have gloves &amp; wraps</option>
+                <option value="no">No — please set me up with gear</option>
+              </select>
+            </div>
+          </div>
 
           <!-- Hidden routing fields for GHL — auto-filled, no friction for the user -->
           <input type="hidden" name="last_name" value="" />
