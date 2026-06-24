@@ -501,6 +501,9 @@
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
       // TODO: wire to GHL endpoint. Hidden fields source/page are ready for routing.
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'generate_lead', lead_source: '3 Days Free Popup', form_id: 'promoModal' });
+      if (typeof window.fbq === 'function') { try { window.fbq('track', 'Lead'); } catch (_) {} }
       form.hidden = true;
       success.hidden = false;
     });
@@ -522,6 +525,70 @@
       const p = video.play();
       if (p && p.catch) p.catch(() => {});
     });
+  })();
+
+  /* ---------- PROMO LEAD FORM (promo.html → GHL webhook) ---------- */
+  (function initPromoForm() {
+    const form = document.getElementById('promo-form');
+    if (!form) return;
+    const WEBHOOK = form.getAttribute('action');
+
+    // Persist click IDs + UTMs for the session so they survive page hops.
+    const ATTR_KEYS = ['gclid', 'fbclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+    const params = new URLSearchParams(location.search);
+    ATTR_KEYS.forEach(k => { const v = params.get(k); if (v) { try { sessionStorage.setItem('attr_' + k, v); } catch (_) {} } });
+
+    const setHidden = (name, value) => {
+      let el = form.querySelector('input[name="' + name + '"]');
+      if (!el) { el = document.createElement('input'); el.type = 'hidden'; el.name = name; form.appendChild(el); }
+      el.value = value || '';
+    };
+    ATTR_KEYS.forEach(k => { let v = ''; try { v = sessionStorage.getItem('attr_' + k) || ''; } catch (_) {} setHidden(k, v); });
+    setHidden('landing_url', location.href);
+    setHidden('referrer', document.referrer || '');
+
+    const btn = form.querySelector('button[type="submit"]');
+    let submitting = false;
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (submitting) return;
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      submitting = true;
+      if (btn) { btn.disabled = true; btn.dataset.label = btn.innerHTML; btn.textContent = 'Sending…'; }
+
+      const body = new URLSearchParams(new FormData(form)).toString();
+      // Fire-and-forget: GHL webhook is cross-origin, so the response is
+      // opaque (no-cors). We assume success once the request is dispatched.
+      fetch(WEBHOOK, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+        body
+      }).catch(() => {}).finally(() => {
+        fireConversions();
+        showSuccess();
+      });
+    });
+
+    function fireConversions() {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'generate_lead', lead_source: '3 Days Free Promo', form_id: 'promo-form' });
+      if (typeof window.fbq === 'function') { try { window.fbq('track', 'Lead'); } catch (_) {} }
+      // Google Ads (only if NOT firing via GTM): set your conversion ID/label.
+      // if (typeof window.gtag === 'function') { window.gtag('event', 'conversion', { send_to: 'AW-XXXXXXXXX/XXXXXXXXXXX' }); }
+    }
+
+    function showSuccess() {
+      form.innerHTML =
+        '<div class="lead-form__success">' +
+          '<span class="lead-form__success-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span>' +
+          '<h2 class="lead-form__title">You’re <em>in.</em></h2>' +
+          '<p class="lead-form__lead" style="margin-bottom:0;">Your 3-day pass is on its way by text — watch your phone over the next 5 minutes. See you in the gym.</p>' +
+        '</div>';
+      if (lenis) lenis.scrollTo(form, { offset: -90, duration: 1.0 });
+      else form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
   })();
 
   /* ---------- VSL PLAYER (promo.html video sales letter) ---------- */

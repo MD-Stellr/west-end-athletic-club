@@ -12,6 +12,47 @@
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Big+Shoulders+Display:wght@700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/styles.css" />
+
+  <!--
+    ============================================================
+    AD CONVERSION TAGS — paste real IDs to activate
+    ============================================================
+    The form fires a `generate_lead` dataLayer event + fbq('track','Lead')
+    on a successful submit (see initPromoForm in js/main.js). Add the tags
+    below to capture those as conversions. Ideally install these site-wide
+    (or via one GTM container), not just on this page.
+
+    1) GOOGLE TAG MANAGER (recommended — manages both Google + Meta):
+       Paste your GTM container snippet here and the matching <noscript>
+       just after <body>. Then in GTM, create a trigger on the custom
+       event `generate_lead` and attach your Google Ads conversion + Meta
+       Lead tags to it.
+
+    2) META PIXEL (if not using GTM): paste the base Pixel snippet here.
+       initPromoForm already calls fbq('track','Lead') on success.
+
+    3) GOOGLE ADS (if not using GTM): load gtag.js here, then uncomment the
+       gtag() conversion line inside initPromoForm and set AW-XXXX/label.
+    ============================================================
+  -->
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2077569749638468');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=2077569749638468&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 <body class="has-promo-sticky">
 
@@ -180,22 +221,30 @@
         <!-- RIGHT: lead form -->
         <!--
           ============================================================
-          GHL PIPELINE WIRING NEEDED
+          GHL WIRING — LIVE
           ============================================================
-          1. Replace the form's `action` attribute below with your GHL
-             webhook endpoint, OR
-          2. Swap this entire <form> block for the embed code from your
-             GHL form builder.
-          Field names below are GHL-friendly:
-            first_name, last_name, email, phone, source
-          The hidden `source` field tags leads as "3 Days Free Promo"
-          so you can route them to the correct pipeline.
+          Submits to the GHL inbound webhook (action below) via AJAX in
+          js/main.js → initPromoForm(). That handler also:
+            • auto-fills the hidden attribution fields (gclid, fbclid,
+              utm_*) from the URL + session, and
+            • fires a `generate_lead` dataLayer event + fbq('track','Lead')
+              on success.
+
+          Fields the webhook receives (map these in the GHL workflow):
+            first_name, email, phone, boxing_experience, has_equipment,
+            last_name, source, page, gclid, fbclid,
+            utm_source/medium/campaign/term/content, landing_url, referrer
+
+          To finish ad conversions:
+            • Google — fire on the `generate_lead` event in GTM, OR
+              uncomment the gtag() line in initPromoForm and set AW-XXXX/label.
+            • Meta — load the base Pixel in <head> (see commented block).
           ============================================================
         -->
         <form
           id="promo-form"
           class="lead-form"
-          action="#"
+          action="https://services.leadconnectorhq.com/hooks/yifLVeto5irb0ZwcVepP/webhook-trigger/23a5597a-159f-45a6-bbb7-0abff312a7ed"
           method="POST"
           aria-labelledby="form-title"
         >
@@ -252,6 +301,17 @@
           <input type="hidden" name="last_name" value="" />
           <input type="hidden" name="source" value="3 Days Free Promo" />
           <input type="hidden" name="page" value="promo.html" />
+
+          <!-- Attribution — auto-filled by initPromoForm() from URL params + session -->
+          <input type="hidden" name="gclid" value="" />
+          <input type="hidden" name="fbclid" value="" />
+          <input type="hidden" name="utm_source" value="" />
+          <input type="hidden" name="utm_medium" value="" />
+          <input type="hidden" name="utm_campaign" value="" />
+          <input type="hidden" name="utm_term" value="" />
+          <input type="hidden" name="utm_content" value="" />
+          <input type="hidden" name="landing_url" value="" />
+          <input type="hidden" name="referrer" value="" />
 
           <button type="submit" class="btn-primary lead-form__submit">
             Claim My Free Pass
