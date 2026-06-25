@@ -390,8 +390,8 @@ body.is-loading main, body.is-loading footer, body.is-loading header { visibilit
 .hero__headline {
   font-family: var(--font-display);
   font-weight: 900;
-  font-size: clamp(48px, 7.2vw, 118px);
-  line-height: 0.92;
+  font-size: clamp(40px, 5.6vw, 96px);
+  line-height: 0.94;
   letter-spacing: -0.025em;
   color: var(--bone);
   max-width: 1400px;
