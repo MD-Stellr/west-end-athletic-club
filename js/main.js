@@ -15,6 +15,19 @@
   window.fbq('init', '2077569749638468');
   window.fbq('track', 'PageView');
 
+  /* ---------- VERCEL WEB ANALYTICS (site-wide) ----------
+     Plain static site (no Next.js / React), so use Vercel's framework-
+     agnostic script. /_vercel/insights/script.js is served automatically
+     once Web Analytics is enabled for the project in the Vercel dashboard;
+     it auto-tracks a page view on each page load. */
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  (function () {
+    var s = document.createElement('script');
+    s.defer = true;
+    s.src = '/_vercel/insights/script.js';
+    document.head.appendChild(s);
+  })();
+
   /* ---------- SHARED LEAD-CAPTURE HELPERS ----------
      Used by both the promo-page form (initPromoForm) and the site-wide
      popup (initPromoModal) so they post identical field names to the same
