@@ -6,6 +6,32 @@
 (() => {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ---------- META PIXEL (site-wide) ----------
+     Loaded here so every page that includes main.js gets the base pixel +
+     PageView — and so the lead-capture popup (which appears on every page
+     except /promo) can fire its `Lead` event. NOTE: do not also paste the
+     inline pixel into any page <head> or PageView will fire twice. */
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  window.fbq('init', '2077569749638468');
+  window.fbq('track', 'PageView');
+
+  /* ---------- SHARED LEAD-CAPTURE HELPERS ----------
+     Used by both the promo-page form (initPromoForm) and the site-wide
+     popup (initPromoModal) so they post identical field names to the same
+     GHL webhook — no GHL changes needed to capture popup leads. */
+  const GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/yifLVeto5irb0ZwcVepP/webhook-trigger/23a5597a-159f-45a6-bbb7-0abff312a7ed';
+  const ATTR_KEYS = ['gclid', 'fbclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+  const setFormHidden = (form, name, value) => {
+    let el = form.querySelector('input[name="' + name + '"]');
+    if (!el) { el = document.createElement('input'); el.type = 'hidden'; el.name = name; form.appendChild(el); }
+    el.value = value || '';
+  };
+  // Persist click IDs + UTMs for the session so they survive page hops to the popup.
+  (function captureAttribution() {
+    const params = new URLSearchParams(location.search);
+    ATTR_KEYS.forEach(k => { const v = params.get(k); if (v) { try { sessionStorage.setItem('attr_' + k, v); } catch (_) {} } });
+  })();
+
   /* ---------- LOADER ---------- */
   const loader = document.getElementById('loader');
   const counterEl = document.getElementById('counter');
@@ -438,9 +464,21 @@
           '<h2 class="promo-modal__title" id="promoModalTitle">3 Days <span>Free.</span></h2>' +
           '<p class="promo-modal__sub">Every class, the bag room, open gym — on us. No card on file, no catch. Just show up and train.</p>' +
           '<form class="promo-form" novalidate>' +
-            '<label>Full name<input type="text" name="name" autocomplete="name" placeholder="Your name" required></label>' +
+            '<label>First name<input type="text" name="first_name" autocomplete="given-name" placeholder="Your name" required></label>' +
             '<label>Email<input type="email" name="email" autocomplete="email" placeholder="you@email.com" required></label>' +
             '<label>Phone<input type="tel" name="phone" autocomplete="tel" placeholder="(416) 000-0000" required></label>' +
+            '<label>Do you have boxing experience?<select name="boxing_experience" required>' +
+              '<option value="" disabled selected>Select one…</option>' +
+              '<option value="none">Complete beginner — never boxed</option>' +
+              '<option value="some">Some experience</option>' +
+              '<option value="experienced">Experienced — I\'ve trained or competed</option>' +
+            '</select></label>' +
+            '<label>Do you have your own gear?<select name="has_equipment" required>' +
+              '<option value="" disabled selected>Select one…</option>' +
+              '<option value="yes">Yes — I have gloves &amp; wraps</option>' +
+              '<option value="no">No — please set me up with gear</option>' +
+            '</select></label>' +
+            '<input type="hidden" name="last_name" value="">' +
             '<input type="hidden" name="source" value="3 Days Free Popup">' +
             '<input type="hidden" name="page" value="' + page + '">' +
             '<button class="btn-primary" type="submit">Claim My 3 Days' + arrow + '</button>' +
@@ -497,15 +535,32 @@
       else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
     });
 
+    let submitting = false;
     form.addEventListener('submit', e => {
       e.preventDefault();
+      if (submitting) return;
       if (!form.checkValidity()) { form.reportValidity(); return; }
-      // TODO: wire to GHL endpoint. Hidden fields source/page are ready for routing.
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: 'generate_lead', lead_source: '3 Days Free Popup', form_id: 'promoModal' });
-      if (typeof window.fbq === 'function') { try { window.fbq('track', 'Lead'); } catch (_) {} }
-      form.hidden = true;
-      success.hidden = false;
+      submitting = true;
+      // Same field names + same webhook as the promo-page form, so GHL needs
+      // no changes — popup leads land via the existing mapping (source tells
+      // them apart). Attribution is pulled from the session captured on load.
+      ATTR_KEYS.forEach(k => { let v = ''; try { v = sessionStorage.getItem('attr_' + k) || ''; } catch (_) {} setFormHidden(form, k, v); });
+      setFormHidden(form, 'landing_url', location.href);
+      setFormHidden(form, 'referrer', document.referrer || '');
+      const body = new URLSearchParams(new FormData(form)).toString();
+      // Fire-and-forget (cross-origin webhook → opaque no-cors response).
+      fetch(GHL_WEBHOOK, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+        body
+      }).catch(() => {}).finally(() => {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'generate_lead', lead_source: '3 Days Free Popup', form_id: 'promoModal' });
+        if (typeof window.fbq === 'function') { try { window.fbq('track', 'Lead'); } catch (_) {} }
+        form.hidden = true;
+        success.hidden = false;
+      });
     });
 
     // Triggers: 10s dwell timer + exit-intent (whichever comes first).
