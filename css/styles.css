@@ -391,7 +391,7 @@ body.is-loading main, body.is-loading footer, body.is-loading header { visibilit
   font-family: var(--font-display);
   font-weight: 900;
   font-size: clamp(40px, 5.6vw, 96px);
-  line-height: 0.94;
+  line-height: 1.02;
   letter-spacing: -0.025em;
   color: var(--bone);
   max-width: 1400px;
@@ -3261,7 +3261,7 @@ input, select, textarea { font-size: 16px; }
 @media (max-width: 640px) {
   /* Display headline scaling — pull max-bounds down so cropping disappears.
      The headline em (italic Playfair) renders wide; cap at viewport-safe sizes. */
-  .hero__headline { font-size: clamp(44px, 14vw, 64px); letter-spacing: -0.02em; line-height: 0.94; max-width: 100%; overflow-wrap: break-word; }
+  .hero__headline { font-size: clamp(44px, 14vw, 64px); letter-spacing: -0.02em; line-height: 1.06; max-width: 100%; overflow-wrap: break-word; }
   .hero__headline .word { overflow: visible; }
   /* Let the big headline flow/wrap naturally on phones — the forced break after
      "Average" would otherwise lock three words onto one too-wide line. */
