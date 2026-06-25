@@ -3275,13 +3275,13 @@ input, select, textarea { font-size: 16px; }
   .card__title { font-size: clamp(28px, 8vw, 38px); }
 
   /* Hero — trim oversized vertical padding on phones */
-  .hero { padding: clamp(120px, 24vw, 160px) 20px clamp(80px, 14vw, 100px); }
+  .hero { height: auto; min-height: 100vh; padding: clamp(104px, 22vw, 140px) 20px clamp(72px, 12vw, 96px); }
   .hero__sub { font-size: 15px; line-height: 1.55; }
   .hero__actions { gap: 12px; width: 100%; }
   .hero__actions .btn-primary, .hero__actions .btn-secondary { flex: 1 1 100%; justify-content: center; min-height: 52px; padding: 16px 20px; }
 
   /* Hero topbar — align the editorial prefix flush with the headline's left edge */
-  .hero__topbar { flex-direction: column; align-items: flex-start; gap: 6px; left: 0; right: 0; padding-top: 64px; }
+  .hero__topbar { flex-direction: column; align-items: flex-start; gap: 6px; left: 0; right: 0; padding-top: 8px; }
   .hero__topbar .meta { font-size: 9px; letter-spacing: 0.18em; }
 
   /* Scroll cue — drop it to the very bottom so it clears the reviews badge */
