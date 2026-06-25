@@ -14,7 +14,7 @@
 
   const qs = new URLSearchParams(location.search);
   const screenshotMode = qs.has('screenshot');
-  const skipLoader = qs.has('skip-loader') || qs.has('no-animate') || screenshotMode;
+  const skipLoader = !loader || qs.has('skip-loader') || qs.has('no-animate') || screenshotMode;
   const noAnimate  = qs.has('no-animate') || screenshotMode;
   if (!skipLoader) document.body.classList.add('is-loading');
   if (screenshotMode) document.documentElement.classList.add('screenshot-mode');
@@ -411,7 +411,7 @@
   /* ---------- PROMO MODAL ("3 Days Free" lead capture) ---------- */
   (function initPromoModal() {
     // Don't show on the promo page itself, or if already seen this session.
-    if (/promo\.html$/i.test(location.pathname)) return;
+    if (/\/promo(\.html)?$/i.test(location.pathname)) return;
     if (sessionStorage.getItem('wec_promo_seen')) return;
 
     const page = location.pathname.split('/').pop() || 'index.html';
