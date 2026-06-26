@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#0A0A0A" />
   <title>Schedule — West End Athletic Club | Boxing Done Right</title>
-  <meta name="description" content="35 weekly classes at West End Athletic Club — boxing, strength and conditioning, MMA, sparring and youth — from early mornings to weekend mornings. Train on your schedule." />
+  <meta name="description" content="36 weekly classes at West End Athletic Club — boxing, strength &amp; conditioning, women's classes, youth and sparring — from early mornings to weekend mornings. Train on your schedule." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -113,13 +113,11 @@
       margin-top: 8px;
     }
     /* Discipline accent colors via class */
-    .class-card--fb { border-left-color: var(--fight); }
-    .class-card--tb { border-left-color: #E63946; }
+    .class-card--bx { border-left-color: var(--fight); }
     .class-card--sc { border-left-color: #D4B400; }
-    .class-card--mma { border-left-color: #6B6B6B; }
-    .class-card--ts { border-left-color: var(--bone); }
-    .class-card--youth { border-left-color: #A82835; }
-    .class-card--open { border-left-color: rgba(245,245,240,0.3); }
+    .class-card--wm { border-left-color: #C2477E; }
+    .class-card--yt { border-left-color: #C77D2E; }
+    .class-card--sp { border-left-color: var(--bone); }
     .class-card__pill {
       display: inline-block;
       font-family: var(--font-mono);
@@ -181,7 +179,7 @@
       </div>
       <div class="page-hero__container">
         <h1 class="page-hero__title" id="schedule-heading" data-split>Train on your <em>schedule.</em></h1>
-        <p class="page-hero__sub">35 weekly classes across multiple programs, with sessions running from early morning to weekend mornings. Show up. Put in the work. Get results.</p>
+        <p class="page-hero__sub">36 weekly classes across multiple programs, with sessions running from early morning to weekend mornings. Show up. Put in the work. Get results.</p>
       </div>
     </section>
 
@@ -191,22 +189,20 @@
       <!-- Filter chips -->
       <div class="schedule__filters" aria-label="Filter by discipline">
         <button class="schedule__chip is-active" data-filter="all">All Classes</button>
-        <button class="schedule__chip" data-filter="fb">Fitness Boxing</button>
-        <button class="schedule__chip" data-filter="tb">Technical Boxing</button>
+        <button class="schedule__chip" data-filter="bx">Boxing</button>
         <button class="schedule__chip" data-filter="sc">Strength &amp; Conditioning</button>
-        <button class="schedule__chip" data-filter="mma">MMA</button>
-        <button class="schedule__chip" data-filter="ts">Tech Sparring</button>
-        <button class="schedule__chip" data-filter="youth">Youth</button>
+        <button class="schedule__chip" data-filter="wm">Women's</button>
+        <button class="schedule__chip" data-filter="yt">Youth</button>
+        <button class="schedule__chip" data-filter="sp">Sparring</button>
       </div>
 
       <!-- Legend -->
       <div class="schedule__legend" aria-hidden="true">
         <span><i style="background:#E63946;"></i>Boxing</span>
-        <span><i style="background:#D4B400;"></i>S&amp;C</span>
-        <span><i style="background:#6B6B6B;"></i>MMA</span>
+        <span><i style="background:#D4B400;"></i>Strength &amp; Conditioning</span>
+        <span><i style="background:#C2477E;"></i>Women's</span>
+        <span><i style="background:#C77D2E;"></i>Youth</span>
         <span><i style="background:#F5F5F0;"></i>Sparring</span>
-        <span><i style="background:#A82835;"></i>Youth</span>
-        <span><i style="background:rgba(245,245,240,0.3);"></i>Open Gym</span>
       </div>
 
       <!-- Weekly grid: 7 day columns -->
@@ -216,25 +212,30 @@
         <div class="day-col">
           <div class="day-col__head"><div class="day-col__day">Monday</div></div>
           <div class="day-col__body">
-            <a href="promo" class="class-card class-card--fb" data-discipline="fb">
-              <div class="class-card__time">6:30 AM</div>
-              <div class="class-card__name">Fitness <em>Boxing</em></div>
+            <a href="promo" class="class-card class-card--bx" data-discipline="bx">
+              <div class="class-card__time">6:45 AM</div>
+              <div class="class-card__name">Boxing <em>Bootcamp</em></div>
               <div class="class-card__duration">50 min</div>
             </a>
-            <a href="promo" class="class-card class-card--fb" data-discipline="fb">
+            <a href="promo" class="class-card class-card--bx" data-discipline="bx">
               <div class="class-card__time">12:00 PM</div>
-              <div class="class-card__name">Fitness <em>Boxing</em></div>
+              <div class="class-card__name">The Boxing <em>Blueprint</em></div>
               <div class="class-card__duration">50 min · Lunch Hour</div>
             </a>
-            <a href="promo" class="class-card class-card--sc" data-discipline="sc">
+            <a href="promo" class="class-card class-card--bx" data-discipline="bx">
               <div class="class-card__time">5:30 PM</div>
-              <div class="class-card__name">Strength &amp; <em>Conditioning</em></div>
+              <div class="class-card__name">Tech-Fit <em>Boxing</em></div>
               <div class="class-card__duration">50 min</div>
             </a>
-            <a href="promo" class="class-card class-card--tb" data-discipline="tb">
+            <a href="promo" class="class-card class-card--wm" data-discipline="wm">
+              <div class="class-card__time">6:00 PM</div>
+              <div class="class-card__name">Women's Sculpt &amp; <em>Strong</em></div>
+              <div class="class-card__duration">50 min</div>
+            </a>
+            <a href="promo" class="class-card class-card--bx" data-discipline="bx">
               <div class="class-card__time">6:30 PM</div>
-              <div class="class-card__name">Technical <em>Boxing</em></div>
-              <div class="class-card__duration">60 min</div>
+              <div class="class-card__name">Boxing <em>Bootcamp</em></div>
+              <div class="class-card__duration">50 min</div>
             </a>
           </div>
         </div>
@@ -243,36 +244,35 @@
         <div class="day-col">
           <div class="day-col__head"><div class="day-col__day">Tuesday</div></div>
           <div class="day-col__body">
-            <a href="promo" class="class-card class-card--sc" data-discipline="sc">
-              <div class="class-card__time">5:30 AM</div>
-              <div class="class-card__name">Strength &amp; <em>Conditioning</em></div>
-              <div class="class-card__duration">50 min · Early Bird</div>
-            </a>
-            <a href="promo" class="class-card class-card--fb" data-discipline="fb">
-              <div class="class-card__time">6:30 AM</div>
-              <div class="class-card__name">Fitness <em>Boxing</em></div>
+            <a href="promo" class="class-card class-card--bx" data-discipline="bx">
+              <div class="class-card__time">6:45 AM</div>
+              <div class="class-card__name">Bag <em>Blitz</em></div>
               <div class="class-card__duration">50 min</div>
             </a>
-            <a href="promo" class="class-card class-card--fb" data-discipline="fb">
+            <a href="promo" class="class-card class-card--bx" data-discipline="bx">
               <div class="class-card__time">12:00 PM</div>
-              <div class="class-card__name">Fitness <em>Boxing</em></div>
+              <div class="class-card__name">Tech-Fit <em>Boxing</em></div>
               <div class="class-card__duration">50 min · Lunch Hour</div>
             </a>
-            <a href="promo" class="class-card class-card--fb" data-discipline="fb">
-              <div class="class-card__time">5:30 PM</div>
-              <div class="class-card__name">Women's <em>Fitness</em></div>
-              <div class="class-card__duration">50 min · Women's Only</div>
-              <span class="class-card__pill">Women</span>
-            </a>
-            <a href="promo" class="class-card class-card--fb" data-discipline="fb">
-              <div class="class-card__time">6:30 PM</div>
-              <div class="class-card__name">Fitness <em>Boxing</em></div>
+            <a href="promo" class="class-card class-card--yt" data-discipline="yt">
+              <div class="class-card__time">4:30 PM</div>
+              <div class="class-card__name">Youth Boxing <em>Academy</em></div>
               <div class="class-card__duration">50 min</div>
             </a>
-            <a href="promo" class="class-card class-card--mma" data-discipline="mma">
-              <div class="class-card__time">7:30 PM</div>
-              <div class="class-card__name">Mixed <em>Martial</em> Arts</div>
-              <div class="class-card__duration">75 min</div>
+            <a href="promo" class="class-card class-card--yt" data-discipline="yt">
+              <div class="class-card__time">4:30 PM</div>
+              <div class="class-card__name">Little <em>Warriors</em></div>
+              <div class="class-card__duration">45 min</div>
+            </a>
+            <a href="promo" class="class-card class-card--bx" data-discipline="bx">
+              <div class="class-card__time">5:30 PM</div>
+              <div class="class-card__name">The Boxing <em>Blueprint</em></div>
+              <div class="class-card__duration">50 min</div>
+            </a>
+            <a href="promo" class="class-card class-card--bx" data-discipline="bx">
+              <div class="class-card__time">6:30 PM</div>
+              <div class="class-card__name">Boxing <em>Bootcamp</em></div>
+              <div class="class-card__duration">50 min</div>
             </a>
           </div>
         </div>
@@ -281,31 +281,40 @@
         <div class="day-col">
           <div class="day-col__head"><div class="day-col__day">Wednesday</div></div>
           <div class="day-col__body">
-            <a href="promo" class="class-card class-card--fb" data-discipline="fb">
-              <div class="class-card__time">6:30 AM</div>
-              <div class="class-card__name">Fitness <em>Boxing</em></div>
+            <a href="promo" class="class-card class-card--bx" data-discipline="bx">
+              <div class="class-card__time">6:45 AM</div>
+              <div class="class-card__name">The Boxing <em>Blueprint</em></div>
               <div class="class-card__duration">50 min</div>
             </a>
-            <a href="promo" class="class-card class-card--fb" data-discipline="fb">
+            <a href="promo" class="class-card class-card--bx" data-discipline="bx">
               <div class="class-card__time">12:00 PM</div>
-              <div class="class-card__name">Fitness <em>Boxing</em></div>
+              <div class="class-card__name">Bag <em>Blitz</em></div>
               <div class="class-card__duration">50 min · Lunch Hour</div>
             </a>
-            <a href="promo" class="class-card class-card--sc" data-discipline="sc">
+            <a href="promo" class="class-card class-card--bx" data-discipline="bx">
               <div class="class-card__time">5:30 PM</div>
-              <div class="class-card__name">Strength &amp; <em>Conditioning</em></div>
+              <div class="class-card__name">Tech-Fit <em>Boxing</em></div>
               <div class="class-card__duration">50 min</div>
             </a>
-            <a href="promo" class="class-card class-card--tb" data-discipline="tb">
+            <a href="promo" class="class-card class-card--bx" data-discipline="bx">
               <div class="class-card__time">6:30 PM</div>
-              <div class="class-card__name">Technical <em>Boxing</em></div>
-              <div class="class-card__duration">60 min</div>
+              <div class="class-card__name">Bag <em>Blitz</em></div>
+              <div class="class-card__duration">50 min</div>
             </a>
-            <a href="promo" class="class-card class-card--ts" data-discipline="ts">
+            <a href="promo" class="class-card class-card--yt" data-discipline="yt">
+              <div class="class-card__time">6:30 PM</div>
+              <div class="class-card__name">Youth Boxing <em>Academy</em></div>
+              <div class="class-card__duration">50 min</div>
+            </a>
+            <a href="promo" class="class-card class-card--wm" data-discipline="wm">
+              <div class="class-card__time">6:30 PM</div>
+              <div class="class-card__name">Women's Sculpt &amp; <em>Strong</em></div>
+              <div class="class-card__duration">50 min</div>
+            </a>
+            <a href="promo" class="class-card class-card--sc" data-discipline="sc">
               <div class="class-card__time">7:30 PM</div>
-              <div class="class-card__name">Tech <em>Sparring</em></div>
-              <div class="class-card__duration">75 min · Invite-Only</div>
-              <span class="class-card__pill">Invite</span>
+              <div class="class-card__name">Build &amp; <em>Burn</em></div>
+              <div class="class-card__duration">50 min</div>
             </a>
           </div>
         </div>
@@ -314,31 +323,35 @@
         <div class="day-col">
           <div class="day-col__head"><div class="day-col__day">Thursday</div></div>
           <div class="day-col__body">
-            <a href="promo" class="class-card class-card--sc" data-discipline="sc">
-              <div class="class-card__time">5:30 AM</div>
-              <div class="class-card__name">Strength &amp; <em>Conditioning</em></div>
-              <div class="class-card__duration">50 min · Early Bird</div>
-            </a>
-            <a href="promo" class="class-card class-card--fb" data-discipline="fb">
-              <div class="class-card__time">6:30 AM</div>
-              <div class="class-card__name">Fitness <em>Boxing</em></div>
+            <a href="promo" class="class-card class-card--bx" data-discipline="bx">
+              <div class="class-card__time">6:45 AM</div>
+              <div class="class-card__name">Tech-Fit <em>Boxing</em></div>
               <div class="class-card__duration">50 min</div>
             </a>
-            <a href="promo" class="class-card class-card--fb" data-discipline="fb">
+            <a href="promo" class="class-card class-card--bx" data-discipline="bx">
               <div class="class-card__time">12:00 PM</div>
-              <div class="class-card__name">Fitness <em>Boxing</em></div>
+              <div class="class-card__name">Boxing <em>Bootcamp</em></div>
               <div class="class-card__duration">50 min · Lunch Hour</div>
             </a>
-            <a href="promo" class="class-card class-card--fb" data-discipline="fb">
-              <div class="class-card__time">5:30 PM</div>
-              <div class="class-card__name">Women's <em>Fitness</em></div>
-              <div class="class-card__duration">50 min · Women's Only</div>
-              <span class="class-card__pill">Women</span>
+            <a href="promo" class="class-card class-card--yt" data-discipline="yt">
+              <div class="class-card__time">4:30 PM</div>
+              <div class="class-card__name">Youth Boxing <em>Academy</em></div>
+              <div class="class-card__duration">50 min</div>
             </a>
-            <a href="promo" class="class-card class-card--tb" data-discipline="tb">
-              <div class="class-card__time">7:30 PM</div>
-              <div class="class-card__name">Technical <em>Boxing</em></div>
-              <div class="class-card__duration">60 min</div>
+            <a href="promo" class="class-card class-card--yt" data-discipline="yt">
+              <div class="class-card__time">4:30 PM</div>
+              <div class="class-card__name">Little <em>Warriors</em></div>
+              <div class="class-card__duration">45 min</div>
+            </a>
+            <a href="promo" class="class-card class-card--bx" data-discipline="bx">
+              <div class="class-card__time">5:30 PM</div>
+              <div class="class-card__name">The Boxing <em>Blueprint</em></div>
+              <div class="class-card__duration">50 min</div>
+            </a>
+            <a href="promo" class="class-card class-card--bx" data-discipline="bx">
+              <div class="class-card__time">6:30 PM</div>
+              <div class="class-card__name">Boxing <em>Bootcamp</em></div>
+              <div class="class-card__duration">50 min</div>
             </a>
           </div>
         </div>
@@ -347,61 +360,62 @@
         <div class="day-col">
           <div class="day-col__head"><div class="day-col__day">Friday</div></div>
           <div class="day-col__body">
-            <a href="promo" class="class-card class-card--fb" data-discipline="fb">
-              <div class="class-card__time">6:30 AM</div>
-              <div class="class-card__name">Fitness <em>Boxing</em></div>
+            <a href="promo" class="class-card class-card--bx" data-discipline="bx">
+              <div class="class-card__time">6:45 AM</div>
+              <div class="class-card__name">Bag <em>Blitz</em></div>
               <div class="class-card__duration">50 min</div>
             </a>
-            <a href="promo" class="class-card class-card--fb" data-discipline="fb">
+            <a href="promo" class="class-card class-card--bx" data-discipline="bx">
               <div class="class-card__time">12:00 PM</div>
-              <div class="class-card__name">Fitness <em>Boxing</em></div>
+              <div class="class-card__name">Tech-Fit <em>Boxing</em></div>
               <div class="class-card__duration">50 min · Lunch Hour</div>
             </a>
-            <a href="promo" class="class-card class-card--sc" data-discipline="sc">
-              <div class="class-card__time">5:30 PM</div>
-              <div class="class-card__name">Strength &amp; <em>Conditioning</em></div>
+            <a href="promo" class="class-card class-card--bx" data-discipline="bx">
+              <div class="class-card__time">5:00 PM</div>
+              <div class="class-card__name">Bag <em>Blitz</em></div>
               <div class="class-card__duration">50 min</div>
             </a>
-            <a href="promo" class="class-card class-card--ts" data-discipline="ts">
-              <div class="class-card__time">6:30 PM</div>
-              <div class="class-card__name">Open <em>Sparring</em></div>
-              <div class="class-card__duration">90 min · Vetted</div>
-              <span class="class-card__pill">Open</span>
+            <a href="promo" class="class-card class-card--sc" data-discipline="sc">
+              <div class="class-card__time">6:00 PM</div>
+              <div class="class-card__name">Build &amp; <em>Burn</em></div>
+              <div class="class-card__duration">50 min</div>
+            </a>
+            <a href="promo" class="class-card class-card--sp" data-discipline="sp">
+              <div class="class-card__time">6:00 PM</div>
+              <div class="class-card__name">Beginner <em>Sparring</em></div>
+              <div class="class-card__duration">50 min</div>
             </a>
           </div>
         </div>
 
         <!-- SATURDAY -->
         <div class="day-col">
-          <div class="day-col__head"><div class="day-col__day"><em>Saturday</em></div></div>
+          <div class="day-col__head"><div class="day-col__day">Saturday</div></div>
           <div class="day-col__body">
-            <a href="promo" class="class-card class-card--youth" data-discipline="youth">
-              <div class="class-card__time">11:00 AM</div>
-              <div class="class-card__name">Little <em>Warriors®</em></div>
-              <div class="class-card__duration">45 min · Ages 4–8</div>
-              <span class="class-card__pill">Youth</span>
-            </a>
-            <a href="promo" class="class-card class-card--youth" data-discipline="youth">
-              <div class="class-card__time">11:00 AM</div>
-              <div class="class-card__name">Youth <em>Boxing</em></div>
-              <div class="class-card__duration">50 min · Ages 9–16</div>
-              <span class="class-card__pill">Youth</span>
-            </a>
-            <a href="promo" class="class-card class-card--fb" data-discipline="fb">
-              <div class="class-card__time">10:00 AM</div>
-              <div class="class-card__name">Fitness <em>Boxing</em></div>
-              <div class="class-card__duration">50 min</div>
-            </a>
-            <a href="promo" class="class-card class-card--tb" data-discipline="tb">
-              <div class="class-card__time">11:00 AM</div>
-              <div class="class-card__name">Technical <em>Boxing</em></div>
+            <a href="promo" class="class-card class-card--wm" data-discipline="wm">
+              <div class="class-card__time">8:00 AM</div>
+              <div class="class-card__name">Women's Box &amp; <em>Burn</em></div>
               <div class="class-card__duration">60 min</div>
             </a>
-            <a href="promo" class="class-card class-card--open" data-discipline="open">
-              <div class="class-card__time">1:00 PM</div>
-              <div class="class-card__name">Open <em>Gym</em></div>
-              <div class="class-card__coach">Members access</div>
-              <div class="class-card__duration">Until 3:00 PM</div>
+            <a href="promo" class="class-card class-card--bx" data-discipline="bx">
+              <div class="class-card__time">9:00 AM</div>
+              <div class="class-card__name">Boxing <em>Bootcamp</em></div>
+              <div class="class-card__duration">50 min</div>
+            </a>
+            <a href="promo" class="class-card class-card--bx" data-discipline="bx">
+              <div class="class-card__time">10:00 AM</div>
+              <div class="class-card__name">The Boxing <em>Blueprint</em></div>
+              <div class="class-card__duration">50 min</div>
+            </a>
+            <a href="promo" class="class-card class-card--yt" data-discipline="yt">
+              <div class="class-card__time">11:00 AM</div>
+              <div class="class-card__name">Youth Boxing <em>Academy</em></div>
+              <div class="class-card__duration">50 min</div>
+            </a>
+            <a href="promo" class="class-card class-card--yt" data-discipline="yt">
+              <div class="class-card__time">11:00 AM</div>
+              <div class="class-card__name">Little <em>Warriors</em></div>
+              <div class="class-card__duration">45 min</div>
             </a>
           </div>
         </div>
@@ -410,39 +424,22 @@
         <div class="day-col">
           <div class="day-col__head"><div class="day-col__day">Sunday</div></div>
           <div class="day-col__body">
-            <a href="promo" class="class-card class-card--open" data-discipline="open">
-              <div class="class-card__time">9:00 AM</div>
-              <div class="class-card__name">Open <em>Gym</em></div>
-              <div class="class-card__coach">Members access</div>
-              <div class="class-card__duration">Until 10:00 AM</div>
-            </a>
-            <a href="promo" class="class-card class-card--sc" data-discipline="sc">
+            <a href="promo" class="class-card class-card--wm" data-discipline="wm">
               <div class="class-card__time">10:00 AM</div>
-              <div class="class-card__name">Strength &amp; <em>Conditioning</em></div>
+              <div class="class-card__name">Women's Box &amp; <em>Burn</em></div>
               <div class="class-card__duration">50 min</div>
             </a>
-            <a href="promo" class="class-card class-card--fb" data-discipline="fb">
+            <a href="promo" class="class-card class-card--bx" data-discipline="bx">
               <div class="class-card__time">11:00 AM</div>
-              <div class="class-card__name">Fitness <em>Boxing</em></div>
+              <div class="class-card__name">The Boxing <em>Blueprint</em></div>
               <div class="class-card__duration">50 min</div>
-            </a>
-            <a href="promo" class="class-card class-card--tb" data-discipline="tb">
-              <div class="class-card__time">12:00 PM</div>
-              <div class="class-card__name">Technical <em>Boxing</em></div>
-              <div class="class-card__duration">60 min</div>
-            </a>
-            <a href="promo" class="class-card class-card--open" data-discipline="open">
-              <div class="class-card__time">1:00 PM</div>
-              <div class="class-card__name">Open <em>Gym</em></div>
-              <div class="class-card__coach">Members access</div>
-              <div class="class-card__duration">Until 2:00 PM</div>
             </a>
           </div>
         </div>
 
       </div>
 
-      <div class="schedule__note">Schedule subject to change. Holiday hours posted at the front desk. Sparring and invite-only classes require coach approval — talk to your coach about your readiness.</div>
+      <div class="schedule__note">Open gym runs throughout our hours of operation. All group classes and open gym sessions must be pre-booked on our app. Schedule subject to change — holiday hours posted at the front desk.</div>
     </section>
 
     <!-- CTA -->
