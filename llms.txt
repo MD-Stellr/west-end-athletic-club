@@ -1,0 +1,17 @@
+# West End Athletic Club
+
+West End Athletic Club is a boxing and fitness gym at 283 Bering Ave, Etobicoke,
+Ontario M8Z 3A5 (Toronto's west end), founded by the Cappuccitti family in 2015.
+It serves complete beginners through national-level competitors, with 11 programs
+including youth boxing (ages 4–16), women's-only classes, beginner sparring, strength
+& conditioning, and a competitive amateur fight team. Rated 4.9/5 on Google (280+
+reviews). Coaches include former national and North American champions. New members
+can claim 3 free days. Phone: 416-621-1234. Email: info@westendac.com.
+
+## Pages
+- https://www.westendac.com/ — Home: overview, offer, community
+- https://www.westendac.com/about — Story, mission, values, coaching staff and credentials
+- https://www.westendac.com/classes — All 11 programs, who each suits, and how to start
+- https://www.westendac.com/schedule — Full weekly timetable (36 classes/week)
+- https://www.westendac.com/memberships — Pricing, youth rates, intro offers, and FAQ
+- https://www.westendac.com/promo — Claim 3 free days (new members)
