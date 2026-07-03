@@ -39,6 +39,14 @@
     if (!el) { el = document.createElement('input'); el.type = 'hidden'; el.name = name; form.appendChild(el); }
     el.value = value || '';
   };
+  // Google Ads "Submit lead form" conversion — fired on successful lead capture
+  // from both the promo-page form and the site-wide popup (gtag base tag is in
+  // each page's <head>).
+  const reportAdsConversion = () => {
+    if (typeof window.gtag === 'function') {
+      try { window.gtag('event', 'conversion', { send_to: 'AW-18294865526/J5c-CI2N2skcEPb81ZNE', value: 1.0, currency: 'CAD' }); } catch (_) {}
+    }
+  };
   // Persist click IDs + UTMs for the session so they survive page hops to the popup.
   (function captureAttribution() {
     const params = new URLSearchParams(location.search);
@@ -571,6 +579,7 @@
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({ event: 'generate_lead', lead_source: '3 Days Free Popup', form_id: 'promoModal' });
         if (typeof window.fbq === 'function') { try { window.fbq('track', 'Lead'); } catch (_) {} }
+        reportAdsConversion();
         form.hidden = true;
         success.hidden = false;
       });
@@ -643,8 +652,7 @@
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ event: 'generate_lead', lead_source: '3 Days Free Promo', form_id: 'promo-form' });
       if (typeof window.fbq === 'function') { try { window.fbq('track', 'Lead'); } catch (_) {} }
-      // Google Ads (only if NOT firing via GTM): set your conversion ID/label.
-      // if (typeof window.gtag === 'function') { window.gtag('event', 'conversion', { send_to: 'AW-XXXXXXXXX/XXXXXXXXXXX' }); }
+      reportAdsConversion();
     }
 
     function showSuccess() {
