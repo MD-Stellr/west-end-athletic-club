@@ -167,7 +167,7 @@ body.is-loading main, body.is-loading footer, body.is-loading header { visibilit
 
 /* slide-up reveal */
 .loader.is-leaving {
-  animation: loaderLeave 1.1s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+  animation: loaderLeave 0.45s cubic-bezier(0.76, 0, 0.24, 1) forwards;
 }
 @keyframes loaderLeave {
   to { transform: translateY(-101%); }

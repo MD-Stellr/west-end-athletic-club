@@ -69,7 +69,7 @@
   const runLoader = () => {
     let current = 0;
     const target = 100;
-    const duration = 1700; // ms
+    const duration = 500; // ms
     const startTime = performance.now();
 
     const tick = (now) => {
@@ -91,7 +91,7 @@
           loaderBrand.style.opacity = '1';
           loaderBrand.style.transform = 'translateX(-50%) translateY(0)';
         }
-        setTimeout(dismissLoader, 700);
+        setTimeout(dismissLoader, 100);
       }
     };
 
@@ -104,7 +104,7 @@
     setTimeout(() => {
       if (loader && loader.parentNode) loader.parentNode.removeChild(loader);
       kickoffPageAnimations();
-    }, 1100);
+    }, 450);
   };
 
   // start loader after fonts ready (or after timeout fallback)
@@ -116,7 +116,7 @@
   } else if (document.fonts && document.fonts.ready) {
     Promise.race([
       document.fonts.ready,
-      new Promise(r => setTimeout(r, 1500))
+      new Promise(r => setTimeout(r, 250))
     ]).then(startLoader);
   } else {
     startLoader();
