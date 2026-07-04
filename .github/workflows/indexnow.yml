@@ -1,0 +1,33 @@
+name: IndexNow ping
+
+# Notifies IndexNow-participating engines (Bing, Yandex, Naver) on each
+# push to main so new/updated pages get crawled fast.
+on:
+  push:
+    branches: [main]
+
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Submit URLs to IndexNow
+        run: |
+          curl -sS -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d '{
+              "host": "www.westendac.com",
+              "key": "a7f3e9c1b5d84f26a0e7c3b9d1f6a2e8",
+              "keyLocation": "https://www.westendac.com/a7f3e9c1b5d84f26a0e7c3b9d1f6a2e8.txt",
+              "urlList": [
+                "https://www.westendac.com/",
+                "https://www.westendac.com/about",
+                "https://www.westendac.com/classes",
+                "https://www.westendac.com/schedule",
+                "https://www.westendac.com/memberships",
+                "https://www.westendac.com/boxing-gym-etobicoke",
+                "https://www.westendac.com/youth-boxing-toronto",
+                "https://www.westendac.com/womens-boxing-toronto",
+                "https://www.westendac.com/promo",
+                "https://www.westendac.com/privacy"
+              ]
+            }'
