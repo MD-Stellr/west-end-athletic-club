@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /_vercel/
+Disallow: /*?screenshot
+Disallow: /*?no-animate
 
 User-agent: GPTBot
 Allow: /
@@ -8,6 +11,8 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
 Allow: /
 
 Sitemap: https://www.westendac.com/sitemap.xml

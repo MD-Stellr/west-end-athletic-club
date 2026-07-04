@@ -460,6 +460,7 @@
     // Don't show on the promo page itself, or if already seen this session.
     if (/\/promo(\.html)?$/i.test(location.pathname)) return;
     if (sessionStorage.getItem('wec_promo_seen')) return;
+    if (document.getElementById('promo-form')) return; // page has its own inline lead form
 
     const page = location.pathname.split('/').pop() || 'index.html';
     const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>';
