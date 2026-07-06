@@ -62,6 +62,16 @@
       } catch (_) {}
     }
   };
+  // On-demand GA4 DebugView: load any page with ?debug_mode=1 to stream events
+  // into GA4 Admin → DebugView for verification. Debug traffic is automatically
+  // excluded from standard GA4 reports, so this is safe to leave in production.
+  (function enableGA4Debug() {
+    try {
+      if (/[?&]debug_mode=1\b/.test(location.search) && typeof window.gtag === 'function') {
+        window.gtag('config', 'G-B79P6TPSPG', { debug_mode: true });
+      }
+    } catch (_) {}
+  })();
   // Persist click IDs + UTMs for the session so they survive page hops to the popup.
   (function captureAttribution() {
     const params = new URLSearchParams(location.search);
