@@ -47,6 +47,21 @@
       try { window.gtag('event', 'conversion', { send_to: 'AW-18294865526/J5c-CI2N2skcEPb81ZNE', value: 1.0, currency: 'CAD' }); } catch (_) {}
     }
   };
+  // GA4 (G-B79P6TPSPG) lead event — fired to the GA4 property directly via gtag
+  // (no GTM in use, so the dataLayer push alone would not reach GA4). Mark
+  // "generate_lead" as a Key event in GA4 Admin → Events to count it as a conversion.
+  const reportGA4Lead = (source) => {
+    if (typeof window.gtag === 'function') {
+      try {
+        window.gtag('event', 'generate_lead', {
+          send_to: 'G-B79P6TPSPG',
+          currency: 'CAD',
+          value: 1.0,
+          lead_source: source || 'Website Form'
+        });
+      } catch (_) {}
+    }
+  };
   // Persist click IDs + UTMs for the session so they survive page hops to the popup.
   (function captureAttribution() {
     const params = new URLSearchParams(location.search);
@@ -581,6 +596,7 @@
         window.dataLayer.push({ event: 'generate_lead', lead_source: '3 Days Free Popup', form_id: 'promoModal' });
         if (typeof window.fbq === 'function') { try { window.fbq('track', 'Lead'); } catch (_) {} }
         reportAdsConversion();
+        reportGA4Lead('3 Days Free Popup');
         form.hidden = true;
         success.hidden = false;
       });
@@ -650,10 +666,15 @@
     });
 
     function fireConversions() {
+      // The youth/women's landing pages reuse this form with their own hidden
+      // "source" value, so GA4/Meta/dataLayer get the accurate lead origin.
+      const srcEl = form.querySelector('input[name="source"]');
+      const leadSource = (srcEl && srcEl.value) || '3 Days Free Promo';
       window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: 'generate_lead', lead_source: '3 Days Free Promo', form_id: 'promo-form' });
+      window.dataLayer.push({ event: 'generate_lead', lead_source: leadSource, form_id: 'promo-form' });
       if (typeof window.fbq === 'function') { try { window.fbq('track', 'Lead'); } catch (_) {} }
       reportAdsConversion();
+      reportGA4Lead(leadSource);
     }
 
     function showSuccess() {
