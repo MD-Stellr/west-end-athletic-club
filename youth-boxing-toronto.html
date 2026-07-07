@@ -113,6 +113,13 @@
       <div class="page-hero__container">
         <h1 class="page-hero__title" id="youth-heading" data-split>Youth boxing in <em>Toronto.</em></h1>
         <p class="page-hero__sub">West End Athletic Club is the west end's home for kids' boxing — ages 4 to 16 building confidence, discipline, and focus in a safe, non-contact, coach-led program. In Etobicoke, minutes from Mimico, The Junction, Bloor West and High Park.</p>
+        <div style="display:flex; align-items:center; gap:22px; flex-wrap:wrap; margin-top:28px;">
+          <a href="#youth-form" class="btn-primary">
+            Claim 3 Days Free
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.14em; color:var(--ash);"><span style="color:var(--fight);">&#9733;&#9733;&#9733;&#9733;&#9733;</span>&nbsp; 4.9 on Google &middot; 117 reviews</span>
+        </div>
       </div>
     </section>
 
@@ -139,7 +146,7 @@
         <div class="discipline__grid">
           <div class="discipline__media">
             <div class="discipline__num">01 / LW</div>
-            <img src="images/c-littlewarriors.jpg" alt="Little Warriors youth boxing class for ages 4 to 8 at West End" width="1000" height="800" />
+            <img src="images/f8.jpg" alt="Little Warriors youth boxing class for ages 4 to 8 at West End" width="1080" height="721" />
           </div>
           <div class="discipline__content">
             <div class="meta meta--prefix">Ages 4 – 8 · Boxing done fun.</div>
@@ -227,6 +234,44 @@
       </div>
     </section>
 
+    <!-- LEAD FORM (on-page, routes to GHL as Youth Boxing) -->
+    <section class="section" id="youth-form" aria-labelledby="youth-form-heading" style="background:var(--carbon); border-top:1px solid var(--hairline);">
+      <div class="container" style="max-width:560px;">
+        <form id="promo-form" class="lead-form" action="https://services.leadconnectorhq.com/hooks/yifLVeto5irb0ZwcVepP/webhook-trigger/23a5597a-159f-45a6-bbb7-0abff312a7ed" method="POST" aria-labelledby="youth-form-heading">
+          <h2 class="lead-form__title" id="youth-form-heading">Claim your child's <em>3 days free.</em></h2>
+          <p class="lead-form__lead">Takes 20 seconds. We'll text you to book their first class.</p>
+          <div class="lead-form__row"><div class="lead-form__field">
+            <label class="lead-form__label" for="first_name">Parent's First Name</label>
+            <input class="lead-form__input" type="text" id="first_name" name="first_name" autocomplete="given-name" placeholder="Jordan" required />
+          </div></div>
+          <div class="lead-form__row"><div class="lead-form__field">
+            <label class="lead-form__label" for="email">Email</label>
+            <input class="lead-form__input" type="email" id="email" name="email" autocomplete="email" inputmode="email" placeholder="you@email.com" required />
+          </div></div>
+          <div class="lead-form__row"><div class="lead-form__field">
+            <label class="lead-form__label" for="phone">Mobile <span class="lead-form__hint">&mdash; we'll text you</span></label>
+            <input class="lead-form__input" type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="(416) 555-0123" required />
+          </div></div>
+          <div class="lead-form__row"><div class="lead-form__field">
+            <label class="lead-form__label" for="child_age">Your child's age</label>
+            <select class="lead-form__select" id="child_age" name="child_age" required>
+              <option value="" disabled selected>Select one&hellip;</option>
+              <option value="4-8">4&ndash;8 (Little Warriors)</option>
+              <option value="8-16">8&ndash;16 (Youth Academy)</option>
+            </select>
+          </div></div>
+          <input type="hidden" name="last_name" value="" />
+          <input type="hidden" name="source" value="Youth Boxing" />
+          <input type="hidden" name="page" value="youth-boxing-toronto" />
+          <button type="submit" class="btn-primary lead-form__submit">
+            Claim 3 Days Free
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </button>
+          <p class="lead-form__legal">No spam. No sales calls. New members only &middot; One per household.</p>
+        </form>
+      </div>
+    </section>
+
     <!-- LOCATION / MAP -->
     <section class="section locate" id="visit-us" aria-labelledby="locate-heading" style="border-top:1px solid var(--hairline);">
       <div class="container">
@@ -305,44 +350,6 @@
             <p class="faq__a">Yes. Youth memberships follow a 30-day written cancellation notice to info@westendac.com, and family discounts are offered.</p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- LEAD FORM (on-page, routes to GHL as Youth Boxing) -->
-    <section class="section" id="youth-form" aria-labelledby="youth-form-heading" style="background:var(--carbon); border-top:1px solid var(--hairline);">
-      <div class="container" style="max-width:560px;">
-        <form id="promo-form" class="lead-form" action="https://services.leadconnectorhq.com/hooks/yifLVeto5irb0ZwcVepP/webhook-trigger/23a5597a-159f-45a6-bbb7-0abff312a7ed" method="POST" aria-labelledby="youth-form-heading">
-          <h2 class="lead-form__title" id="youth-form-heading">Claim your child's <em>3 days free.</em></h2>
-          <p class="lead-form__lead">Takes 20 seconds. We'll text you to book their first class.</p>
-          <div class="lead-form__row"><div class="lead-form__field">
-            <label class="lead-form__label" for="first_name">Parent's First Name</label>
-            <input class="lead-form__input" type="text" id="first_name" name="first_name" autocomplete="given-name" placeholder="Jordan" required />
-          </div></div>
-          <div class="lead-form__row"><div class="lead-form__field">
-            <label class="lead-form__label" for="email">Email</label>
-            <input class="lead-form__input" type="email" id="email" name="email" autocomplete="email" inputmode="email" placeholder="you@email.com" required />
-          </div></div>
-          <div class="lead-form__row"><div class="lead-form__field">
-            <label class="lead-form__label" for="phone">Mobile <span class="lead-form__hint">&mdash; we'll text you</span></label>
-            <input class="lead-form__input" type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="(416) 555-0123" required />
-          </div></div>
-          <div class="lead-form__row"><div class="lead-form__field">
-            <label class="lead-form__label" for="child_age">Your child's age</label>
-            <select class="lead-form__select" id="child_age" name="child_age" required>
-              <option value="" disabled selected>Select one&hellip;</option>
-              <option value="4-8">4&ndash;8 (Little Warriors)</option>
-              <option value="8-16">8&ndash;16 (Youth Academy)</option>
-            </select>
-          </div></div>
-          <input type="hidden" name="last_name" value="" />
-          <input type="hidden" name="source" value="Youth Boxing" />
-          <input type="hidden" name="page" value="youth-boxing-toronto" />
-          <button type="submit" class="btn-primary lead-form__submit">
-            Claim 3 Days Free
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-          </button>
-          <p class="lead-form__legal">No spam. No sales calls. New members only &middot; One per household.</p>
-        </form>
       </div>
     </section>
 
