@@ -248,6 +248,53 @@ body.is-loading main, body.is-loading footer, body.is-loading header { visibilit
 .nav__link:hover { color: var(--bone); }
 .nav__link:hover::after { width: 100%; }
 
+/* NAV DROPDOWN (The Club) */
+.nav__item { position: relative; display: inline-flex; }
+.nav__dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 6px);
+  margin-top: 12px;
+  min-width: 172px;
+  background: var(--carbon);
+  border: 1px solid var(--hairline);
+  padding: 6px 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  z-index: 110;
+}
+.nav__dropdown::before { /* invisible hover bridge over the 12px gap */
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
+}
+.nav__item:hover .nav__dropdown,
+.nav__item:focus-within .nav__dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+.nav__dropdown a {
+  display: block;
+  padding: 10px 18px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ash);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+.nav__dropdown a:hover { color: var(--bone); background: var(--smoke); }
+
 .nav__cta {
   display: inline-flex;
   align-items: center;
@@ -311,6 +358,15 @@ body.is-loading main, body.is-loading footer, body.is-loading header { visibilit
   text-decoration: none;
   padding: 16px 0;
   border-bottom: 1px solid var(--hairline);
+}
+.mobile-menu__link--sub {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ash);
+  padding: 14px 0 14px 8px;
 }
 
 /* =====================================================================
