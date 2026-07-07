@@ -509,21 +509,21 @@
         '<div class="promo-modal__body">' +
           '<span class="promo-modal__eyebrow">New members · Limited</span>' +
           '<h2 class="promo-modal__title" id="promoModalTitle">3 Days <span>Free.</span></h2>' +
-          '<p class="promo-modal__sub">Every class, the bag room, open gym — on us. No card on file, no catch. Just show up and train.</p>' +
+          '<p class="promo-modal__sub">Every class, the bag room, open gym, on us. No card on file, no catch. Just show up and train.</p>' +
           '<form class="promo-form" novalidate>' +
             '<label>First name<input type="text" name="first_name" autocomplete="given-name" placeholder="Your name" required></label>' +
             '<label>Email<input type="email" name="email" autocomplete="email" placeholder="you@email.com" required></label>' +
             '<label>Phone<input type="tel" name="phone" autocomplete="tel" placeholder="(416) 000-0000" required></label>' +
             '<label>Do you have boxing experience?<select name="boxing_experience" required>' +
               '<option value="" disabled selected>Select one…</option>' +
-              '<option value="none">Complete beginner — never boxed</option>' +
+              '<option value="none">Complete beginner, never boxed</option>' +
               '<option value="some">Some experience</option>' +
-              '<option value="experienced">Experienced — I\'ve trained or competed</option>' +
+              '<option value="experienced">Experienced, I\'ve trained or competed</option>' +
             '</select></label>' +
             '<label>Do you have your own gear?<select name="has_equipment" required>' +
               '<option value="" disabled selected>Select one…</option>' +
-              '<option value="yes">Yes — I have gloves &amp; wraps</option>' +
-              '<option value="no">No — please set me up with gear</option>' +
+              '<option value="yes">Yes, I have gloves &amp; wraps</option>' +
+              '<option value="no">No, please set me up with gear</option>' +
             '</select></label>' +
             '<input type="hidden" name="last_name" value="">' +
             '<input type="hidden" name="source" value="3 Days Free Popup">' +
@@ -692,7 +692,7 @@
         '<div class="lead-form__success">' +
           '<span class="lead-form__success-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span>' +
           '<h2 class="lead-form__title">You’re <em>in.</em></h2>' +
-          '<p class="lead-form__lead" style="margin-bottom:0;">Your 3-day pass is on its way by text — watch your phone over the next 5 minutes. See you in the gym.</p>' +
+          '<p class="lead-form__lead" style="margin-bottom:0;">Your 3-day pass is on its way by text. Watch your phone over the next 5 minutes. See you in the gym.</p>' +
         '</div>';
       if (lenis) lenis.scrollTo(form, { offset: -90, duration: 1.0 });
       else form.scrollIntoView({ behavior: 'smooth', block: 'center' });
